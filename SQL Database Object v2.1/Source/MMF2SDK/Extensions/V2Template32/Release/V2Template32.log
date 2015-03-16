@@ -1,0 +1,25 @@
+﻿Build started 3/15/2015 9:01:33 PM.
+     1>Project "D:\_xUser\Jamie\MMF_Ext2\SQLDB2.1\SQL Database Object v2.1\Source\MMF2SDK\Extensions\V2Template32\V2Template32.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating ".\Release\V2Template32.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         All outputs are up-to-date.
+         All outputs are up-to-date.
+       ResourceCompile:
+         All outputs are up-to-date.
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppBuild.targets(990,5): warning MSB8012: TargetPath(D:\_xUser\Jamie\MMF_Ext2\SQLDB2.1\SQL Database Object v2.1\Source\MMF2SDK\Extensions\V2Template32\.\Release\V2Template32.dll) does not match the Linker's OutputFile property value (D:\_xUser\Jamie\MMF_Ext2\SQLDB2.1\SQL Database Object v2.1\Source\MMF2SDK\Extensions\V2Template32\Release\sql.mfx). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppBuild.targets(991,5): warning MSB8012: TargetExt(.dll) does not match the Linker's OutputFile property value (.mfx). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppBuild.targets(992,5): warning MSB8012: TargetName(V2Template32) does not match the Linker's OutputFile property value (sql). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
+       Link:
+         All outputs are up-to-date.
+         V2Template32.vcxproj -> D:\_xUser\Jamie\MMF_Ext2\SQLDB2.1\SQL Database Object v2.1\Source\MMF2SDK\Extensions\V2Template32\.\Release\V2Template32.dll
+       BscMake:
+         All outputs are up-to-date.
+       FinalizeBuildStatus:
+         Deleting file ".\Release\V2Template32.unsuccessfulbuild".
+         Touching ".\Release\V2Template32.lastbuildstate".
+     1>Done Building Project "D:\_xUser\Jamie\MMF_Ext2\SQLDB2.1\SQL Database Object v2.1\Source\MMF2SDK\Extensions\V2Template32\V2Template32.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.06

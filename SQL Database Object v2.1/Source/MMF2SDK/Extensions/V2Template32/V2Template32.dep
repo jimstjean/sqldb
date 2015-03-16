@@ -1,0 +1,500 @@
+# Microsoft Developer Studio Generated Dependency File, included by V2Template32.mak
+
+..\..\sqlite\attach.c : \
+	"..\..\sqlite\btree.h"\
+	"..\..\sqlite\config.h"\
+	"..\..\sqlite\hash.h"\
+	"..\..\sqlite\opcodes.h"\
+	"..\..\sqlite\parse.h"\
+	"..\..\sqlite\sqlite3.h"\
+	"..\..\sqlite\sqliteInt.h"\
+	"..\..\sqlite\vdbe.h"\
+	
+
+..\..\sqlite\auth.c : \
+	"..\..\sqlite\btree.h"\
+	"..\..\sqlite\config.h"\
+	"..\..\sqlite\hash.h"\
+	"..\..\sqlite\opcodes.h"\
+	"..\..\sqlite\parse.h"\
+	"..\..\sqlite\sqlite3.h"\
+	"..\..\sqlite\sqliteInt.h"\
+	"..\..\sqlite\vdbe.h"\
+	
+
+..\..\sqlite\btree.c : \
+	"..\..\..\..\..\..\..\Program Files\Microsoft Visual Studio\Vc98\Include\Basetsd.h"\
+	"..\..\sqlite\btree.h"\
+	"..\..\sqlite\config.h"\
+	"..\..\sqlite\hash.h"\
+	"..\..\sqlite\opcodes.h"\
+	"..\..\sqlite\os.h"\
+	"..\..\sqlite\os_win.h"\
+	"..\..\sqlite\pager.h"\
+	"..\..\sqlite\parse.h"\
+	"..\..\sqlite\sqlite3.h"\
+	"..\..\sqlite\sqliteInt.h"\
+	"..\..\sqlite\vdbe.h"\
+	
+
+..\..\sqlite\build.c : \
+	"..\..\sqlite\btree.h"\
+	"..\..\sqlite\config.h"\
+	"..\..\sqlite\hash.h"\
+	"..\..\sqlite\opcodes.h"\
+	"..\..\sqlite\parse.h"\
+	"..\..\sqlite\sqlite3.h"\
+	"..\..\sqlite\sqliteInt.h"\
+	"..\..\sqlite\vdbe.h"\
+	
+
+..\..\sqlite\date.c : \
+	"..\..\..\..\..\..\..\Program Files\Microsoft Visual Studio\Vc98\Include\Basetsd.h"\
+	"..\..\sqlite\btree.h"\
+	"..\..\sqlite\config.h"\
+	"..\..\sqlite\hash.h"\
+	"..\..\sqlite\opcodes.h"\
+	"..\..\sqlite\os.h"\
+	"..\..\sqlite\os_win.h"\
+	"..\..\sqlite\parse.h"\
+	"..\..\sqlite\sqlite3.h"\
+	"..\..\sqlite\sqliteInt.h"\
+	"..\..\sqlite\vdbe.h"\
+	
+
+..\..\sqlite\delete.c : \
+	"..\..\sqlite\btree.h"\
+	"..\..\sqlite\config.h"\
+	"..\..\sqlite\hash.h"\
+	"..\..\sqlite\opcodes.h"\
+	"..\..\sqlite\parse.h"\
+	"..\..\sqlite\sqlite3.h"\
+	"..\..\sqlite\sqliteInt.h"\
+	"..\..\sqlite\vdbe.h"\
+	
+
+.\Edittime.cpp : \
+	"..\..\..\..\..\..\..\Program Files\Microsoft Visual Studio\Vc98\Include\Basetsd.h"\
+	"..\Inc\Ccx.h"\
+	"..\Inc\Ccxhdr.h"\
+	"..\Inc\Cnpdll.h"\
+	"..\Inc\colors.h"\
+	"..\Inc\Mmf\Cncf.h"\
+	"..\Inc\Mmf\Cncy.h"\
+	"..\Inc\Mmf\Evtccx.h"\
+	"..\Inc\Ptype.h"\
+	"..\Inc\Surface.h"\
+	"..\Inc\WinMacro.h"\
+	".\Common.h"\
+	".\Main.h"\
+	".\sqlite3.h"\
+	".\TigsExt.hpp"\
+	
+
+..\..\sqlite\expr.c : \
+	"..\..\sqlite\btree.h"\
+	"..\..\sqlite\config.h"\
+	"..\..\sqlite\hash.h"\
+	"..\..\sqlite\opcodes.h"\
+	"..\..\sqlite\parse.h"\
+	"..\..\sqlite\sqlite3.h"\
+	"..\..\sqlite\sqliteInt.h"\
+	"..\..\sqlite\vdbe.h"\
+	
+
+.\Extobj.rc : \
+	"..\Inc\Ccx.h"\
+	".\EXTICON.BMP"\
+	".\EXTIMG.BMP"\
+	
+
+..\..\sqlite\func.c : \
+	"..\..\..\..\..\..\..\Program Files\Microsoft Visual Studio\Vc98\Include\Basetsd.h"\
+	"..\..\sqlite\btree.h"\
+	"..\..\sqlite\config.h"\
+	"..\..\sqlite\hash.h"\
+	"..\..\sqlite\opcodes.h"\
+	"..\..\sqlite\os.h"\
+	"..\..\sqlite\os_win.h"\
+	"..\..\sqlite\parse.h"\
+	"..\..\sqlite\sqlite3.h"\
+	"..\..\sqlite\sqliteInt.h"\
+	"..\..\sqlite\vdbe.h"\
+	"..\..\sqlite\vdbeInt.h"\
+	
+
+.\General.cpp : \
+	"..\..\..\..\..\..\..\Program Files\Microsoft Visual Studio\Vc98\Include\Basetsd.h"\
+	"..\Inc\Ccx.h"\
+	"..\Inc\Ccxhdr.h"\
+	"..\Inc\Cnpdll.h"\
+	"..\Inc\colors.h"\
+	"..\Inc\Mmf\Cncf.h"\
+	"..\Inc\Mmf\Cncy.h"\
+	"..\Inc\Mmf\Evtccx.h"\
+	"..\Inc\Ptype.h"\
+	"..\Inc\Surface.h"\
+	"..\Inc\WinMacro.h"\
+	".\Common.h"\
+	".\Main.h"\
+	".\sqlite3.h"\
+	".\TigsExt.hpp"\
+	
+
+..\..\sqlite\hash.c : \
+	"..\..\sqlite\btree.h"\
+	"..\..\sqlite\config.h"\
+	"..\..\sqlite\hash.h"\
+	"..\..\sqlite\opcodes.h"\
+	"..\..\sqlite\parse.h"\
+	"..\..\sqlite\sqlite3.h"\
+	"..\..\sqlite\sqliteInt.h"\
+	"..\..\sqlite\vdbe.h"\
+	
+
+..\..\sqlite\insert.c : \
+	"..\..\sqlite\btree.h"\
+	"..\..\sqlite\config.h"\
+	"..\..\sqlite\hash.h"\
+	"..\..\sqlite\opcodes.h"\
+	"..\..\sqlite\parse.h"\
+	"..\..\sqlite\sqlite3.h"\
+	"..\..\sqlite\sqliteInt.h"\
+	"..\..\sqlite\vdbe.h"\
+	
+
+..\..\sqlite\legacy.c : \
+	"..\..\..\..\..\..\..\Program Files\Microsoft Visual Studio\Vc98\Include\Basetsd.h"\
+	"..\..\sqlite\btree.h"\
+	"..\..\sqlite\config.h"\
+	"..\..\sqlite\hash.h"\
+	"..\..\sqlite\opcodes.h"\
+	"..\..\sqlite\os.h"\
+	"..\..\sqlite\os_win.h"\
+	"..\..\sqlite\parse.h"\
+	"..\..\sqlite\sqlite3.h"\
+	"..\..\sqlite\sqliteInt.h"\
+	"..\..\sqlite\vdbe.h"\
+	
+
+.\Main.cpp : \
+	"..\..\..\..\..\..\..\Program Files\Microsoft Visual Studio\Vc98\Include\Basetsd.h"\
+	"..\Inc\Ccx.h"\
+	"..\Inc\Ccxhdr.h"\
+	"..\Inc\Cnpdll.h"\
+	"..\Inc\colors.h"\
+	"..\Inc\Mmf\Cncf.h"\
+	"..\Inc\Mmf\Cncy.h"\
+	"..\Inc\Mmf\Evtccx.h"\
+	"..\Inc\Ptype.h"\
+	"..\Inc\Surface.h"\
+	"..\Inc\WinMacro.h"\
+	".\Common.h"\
+	".\Main.h"\
+	".\sqlite3.h"\
+	".\TigsExt.hpp"\
+	
+
+..\..\sqlite\os_mac.c : \
+	"..\..\..\..\..\..\..\Program Files\Microsoft Visual Studio\Vc98\Include\Basetsd.h"\
+	"..\..\sqlite\btree.h"\
+	"..\..\sqlite\config.h"\
+	"..\..\sqlite\hash.h"\
+	"..\..\sqlite\opcodes.h"\
+	"..\..\sqlite\os.h"\
+	"..\..\sqlite\os_win.h"\
+	"..\..\sqlite\parse.h"\
+	"..\..\sqlite\sqlite3.h"\
+	"..\..\sqlite\sqliteInt.h"\
+	"..\..\sqlite\vdbe.h"\
+	
+
+..\..\sqlite\os_unix.c : \
+	"..\..\..\..\..\..\..\Program Files\Microsoft Visual Studio\Vc98\Include\Basetsd.h"\
+	"..\..\sqlite\btree.h"\
+	"..\..\sqlite\config.h"\
+	"..\..\sqlite\hash.h"\
+	"..\..\sqlite\opcodes.h"\
+	"..\..\sqlite\os.h"\
+	"..\..\sqlite\os_win.h"\
+	"..\..\sqlite\parse.h"\
+	"..\..\sqlite\sqlite3.h"\
+	"..\..\sqlite\sqliteInt.h"\
+	"..\..\sqlite\vdbe.h"\
+	
+
+..\..\sqlite\os_win.c : \
+	"..\..\..\..\..\..\..\Program Files\Microsoft Visual Studio\Vc98\Include\Basetsd.h"\
+	"..\..\sqlite\btree.h"\
+	"..\..\sqlite\config.h"\
+	"..\..\sqlite\hash.h"\
+	"..\..\sqlite\opcodes.h"\
+	"..\..\sqlite\os.h"\
+	"..\..\sqlite\os_common.h"\
+	"..\..\sqlite\os_win.h"\
+	"..\..\sqlite\parse.h"\
+	"..\..\sqlite\sqlite3.h"\
+	"..\..\sqlite\sqliteInt.h"\
+	"..\..\sqlite\vdbe.h"\
+	
+
+..\..\sqlite\pager.c : \
+	"..\..\..\..\..\..\..\Program Files\Microsoft Visual Studio\Vc98\Include\Basetsd.h"\
+	"..\..\sqlite\btree.h"\
+	"..\..\sqlite\config.h"\
+	"..\..\sqlite\hash.h"\
+	"..\..\sqlite\opcodes.h"\
+	"..\..\sqlite\os.h"\
+	"..\..\sqlite\os_win.h"\
+	"..\..\sqlite\pager.h"\
+	"..\..\sqlite\parse.h"\
+	"..\..\sqlite\sqlite3.h"\
+	"..\..\sqlite\sqliteInt.h"\
+	"..\..\sqlite\vdbe.h"\
+	
+
+..\..\sqlite\parse.c : \
+	"..\..\sqlite\btree.h"\
+	"..\..\sqlite\config.h"\
+	"..\..\sqlite\hash.h"\
+	"..\..\sqlite\opcodes.h"\
+	"..\..\sqlite\parse.h"\
+	"..\..\sqlite\sqlite3.h"\
+	"..\..\sqlite\sqliteInt.h"\
+	"..\..\sqlite\vdbe.h"\
+	
+
+..\..\sqlite\pragma.c : \
+	"..\..\sqlite\btree.h"\
+	"..\..\sqlite\config.h"\
+	"..\..\sqlite\hash.h"\
+	"..\..\sqlite\opcodes.h"\
+	"..\..\sqlite\parse.h"\
+	"..\..\sqlite\sqlite3.h"\
+	"..\..\sqlite\sqliteInt.h"\
+	"..\..\sqlite\vdbe.h"\
+	
+
+..\..\sqlite\printf.c : \
+	"..\..\sqlite\btree.h"\
+	"..\..\sqlite\config.h"\
+	"..\..\sqlite\hash.h"\
+	"..\..\sqlite\opcodes.h"\
+	"..\..\sqlite\parse.h"\
+	"..\..\sqlite\sqlite3.h"\
+	"..\..\sqlite\sqliteInt.h"\
+	"..\..\sqlite\vdbe.h"\
+	
+
+..\..\sqlite\random.c : \
+	"..\..\..\..\..\..\..\Program Files\Microsoft Visual Studio\Vc98\Include\Basetsd.h"\
+	"..\..\sqlite\btree.h"\
+	"..\..\sqlite\config.h"\
+	"..\..\sqlite\hash.h"\
+	"..\..\sqlite\opcodes.h"\
+	"..\..\sqlite\os.h"\
+	"..\..\sqlite\os_win.h"\
+	"..\..\sqlite\parse.h"\
+	"..\..\sqlite\sqlite3.h"\
+	"..\..\sqlite\sqliteInt.h"\
+	"..\..\sqlite\vdbe.h"\
+	
+
+.\Runtime.cpp : \
+	"..\..\..\..\..\..\..\Program Files\Microsoft Visual Studio\Vc98\Include\Basetsd.h"\
+	"..\Inc\Ccx.h"\
+	"..\Inc\Ccxhdr.h"\
+	"..\Inc\Cnpdll.h"\
+	"..\Inc\colors.h"\
+	"..\Inc\Mmf\Cncf.h"\
+	"..\Inc\Mmf\Cncy.h"\
+	"..\Inc\Mmf\Evtccx.h"\
+	"..\Inc\Ptype.h"\
+	"..\Inc\Surface.h"\
+	"..\Inc\WinMacro.h"\
+	".\Common.h"\
+	".\Main.h"\
+	".\sqlite3.h"\
+	".\TigsExt.hpp"\
+	
+
+..\..\sqlite\select.c : \
+	"..\..\sqlite\btree.h"\
+	"..\..\sqlite\config.h"\
+	"..\..\sqlite\hash.h"\
+	"..\..\sqlite\opcodes.h"\
+	"..\..\sqlite\parse.h"\
+	"..\..\sqlite\sqlite3.h"\
+	"..\..\sqlite\sqliteInt.h"\
+	"..\..\sqlite\vdbe.h"\
+	
+
+..\..\sqlite\shell.c : \
+	"..\..\sqlite\sqlite3.h"\
+	
+
+..\..\sqlite\sqlite.c : \
+	"..\..\..\..\..\..\..\Program Files\Microsoft Visual Studio\Vc98\Include\Basetsd.h"\
+	"..\..\sqlite\btree.h"\
+	"..\..\sqlite\config.h"\
+	"..\..\sqlite\hash.h"\
+	"..\..\sqlite\opcodes.h"\
+	"..\..\sqlite\os.h"\
+	"..\..\sqlite\os_win.h"\
+	"..\..\sqlite\parse.h"\
+	"..\..\sqlite\sqlite3.h"\
+	"..\..\sqlite\sqliteInt.h"\
+	"..\..\sqlite\vdbe.h"\
+	
+
+..\..\sqlite\table.c : \
+	"..\..\sqlite\btree.h"\
+	"..\..\sqlite\config.h"\
+	"..\..\sqlite\hash.h"\
+	"..\..\sqlite\opcodes.h"\
+	"..\..\sqlite\parse.h"\
+	"..\..\sqlite\sqlite3.h"\
+	"..\..\sqlite\sqliteInt.h"\
+	"..\..\sqlite\vdbe.h"\
+	
+
+..\..\sqlite\tokenize.c : \
+	"..\..\..\..\..\..\..\Program Files\Microsoft Visual Studio\Vc98\Include\Basetsd.h"\
+	"..\..\sqlite\btree.h"\
+	"..\..\sqlite\config.h"\
+	"..\..\sqlite\hash.h"\
+	"..\..\sqlite\opcodes.h"\
+	"..\..\sqlite\os.h"\
+	"..\..\sqlite\os_win.h"\
+	"..\..\sqlite\parse.h"\
+	"..\..\sqlite\sqlite3.h"\
+	"..\..\sqlite\sqliteInt.h"\
+	"..\..\sqlite\vdbe.h"\
+	
+
+..\..\sqlite\trigger.c : \
+	"..\..\sqlite\btree.h"\
+	"..\..\sqlite\config.h"\
+	"..\..\sqlite\hash.h"\
+	"..\..\sqlite\opcodes.h"\
+	"..\..\sqlite\parse.h"\
+	"..\..\sqlite\sqlite3.h"\
+	"..\..\sqlite\sqliteInt.h"\
+	"..\..\sqlite\vdbe.h"\
+	
+
+..\..\sqlite\update.c : \
+	"..\..\sqlite\btree.h"\
+	"..\..\sqlite\config.h"\
+	"..\..\sqlite\hash.h"\
+	"..\..\sqlite\opcodes.h"\
+	"..\..\sqlite\parse.h"\
+	"..\..\sqlite\sqlite3.h"\
+	"..\..\sqlite\sqliteInt.h"\
+	"..\..\sqlite\vdbe.h"\
+	
+
+..\..\sqlite\utf.c : \
+	"..\..\sqlite\btree.h"\
+	"..\..\sqlite\config.h"\
+	"..\..\sqlite\hash.h"\
+	"..\..\sqlite\opcodes.h"\
+	"..\..\sqlite\parse.h"\
+	"..\..\sqlite\sqlite3.h"\
+	"..\..\sqlite\sqliteInt.h"\
+	"..\..\sqlite\vdbe.h"\
+	"..\..\sqlite\vdbeInt.h"\
+	
+
+..\..\sqlite\util.c : \
+	"..\..\sqlite\btree.h"\
+	"..\..\sqlite\config.h"\
+	"..\..\sqlite\hash.h"\
+	"..\..\sqlite\opcodes.h"\
+	"..\..\sqlite\parse.h"\
+	"..\..\sqlite\sqlite3.h"\
+	"..\..\sqlite\sqliteInt.h"\
+	"..\..\sqlite\vdbe.h"\
+	
+
+..\..\sqlite\vacuum.c : \
+	"..\..\..\..\..\..\..\Program Files\Microsoft Visual Studio\Vc98\Include\Basetsd.h"\
+	"..\..\sqlite\btree.h"\
+	"..\..\sqlite\config.h"\
+	"..\..\sqlite\hash.h"\
+	"..\..\sqlite\opcodes.h"\
+	"..\..\sqlite\os.h"\
+	"..\..\sqlite\os_win.h"\
+	"..\..\sqlite\parse.h"\
+	"..\..\sqlite\sqlite3.h"\
+	"..\..\sqlite\sqliteInt.h"\
+	"..\..\sqlite\vdbe.h"\
+	
+
+..\..\sqlite\vdbe.c : \
+	"..\..\..\..\..\..\..\Program Files\Microsoft Visual Studio\Vc98\Include\Basetsd.h"\
+	"..\..\sqlite\btree.h"\
+	"..\..\sqlite\config.h"\
+	"..\..\sqlite\hash.h"\
+	"..\..\sqlite\opcodes.h"\
+	"..\..\sqlite\os.h"\
+	"..\..\sqlite\os_win.h"\
+	"..\..\sqlite\parse.h"\
+	"..\..\sqlite\sqlite3.h"\
+	"..\..\sqlite\sqliteInt.h"\
+	"..\..\sqlite\vdbe.h"\
+	"..\..\sqlite\vdbeInt.h"\
+	
+
+..\..\sqlite\vdbeapi.c : \
+	"..\..\sqlite\btree.h"\
+	"..\..\sqlite\config.h"\
+	"..\..\sqlite\hash.h"\
+	"..\..\sqlite\opcodes.h"\
+	"..\..\sqlite\parse.h"\
+	"..\..\sqlite\sqlite3.h"\
+	"..\..\sqlite\sqliteInt.h"\
+	"..\..\sqlite\vdbe.h"\
+	"..\..\sqlite\vdbeInt.h"\
+	
+
+..\..\sqlite\vdbeaux.c : \
+	"..\..\..\..\..\..\..\Program Files\Microsoft Visual Studio\Vc98\Include\Basetsd.h"\
+	"..\..\sqlite\btree.h"\
+	"..\..\sqlite\config.h"\
+	"..\..\sqlite\hash.h"\
+	"..\..\sqlite\opcodes.h"\
+	"..\..\sqlite\os.h"\
+	"..\..\sqlite\os_win.h"\
+	"..\..\sqlite\parse.h"\
+	"..\..\sqlite\sqlite3.h"\
+	"..\..\sqlite\sqliteInt.h"\
+	"..\..\sqlite\vdbe.h"\
+	"..\..\sqlite\vdbeInt.h"\
+	
+
+..\..\sqlite\vdbemem.c : \
+	"..\..\..\..\..\..\..\Program Files\Microsoft Visual Studio\Vc98\Include\Basetsd.h"\
+	"..\..\sqlite\btree.h"\
+	"..\..\sqlite\config.h"\
+	"..\..\sqlite\hash.h"\
+	"..\..\sqlite\opcodes.h"\
+	"..\..\sqlite\os.h"\
+	"..\..\sqlite\os_win.h"\
+	"..\..\sqlite\parse.h"\
+	"..\..\sqlite\sqlite3.h"\
+	"..\..\sqlite\sqliteInt.h"\
+	"..\..\sqlite\vdbe.h"\
+	"..\..\sqlite\vdbeInt.h"\
+	
+
+..\..\sqlite\where.c : \
+	"..\..\sqlite\btree.h"\
+	"..\..\sqlite\config.h"\
+	"..\..\sqlite\hash.h"\
+	"..\..\sqlite\opcodes.h"\
+	"..\..\sqlite\parse.h"\
+	"..\..\sqlite\sqlite3.h"\
+	"..\..\sqlite\sqliteInt.h"\
+	"..\..\sqlite\vdbe.h"\
+	

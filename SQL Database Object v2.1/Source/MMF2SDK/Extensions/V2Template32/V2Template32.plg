@@ -1,0 +1,113 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: V2Template32 - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\jstjean\LOCALS~1\Temp\RSP18.tmp" with contents
+[
+/nologo /ML /W3 /GX /O2 /D "NDEBUG" /D "WIN32" /D "_WINDOWS" /D "STRICT" /FR".\Release/" /Fp".\Release/V2Template32.pch" /YX /Fo".\Release/" /Fd".\Release/" /FD /c 
+"C:\_xUser\Jamie\MMF_Ext\SQLDB\SQL Database Object v1.3\Source\sql\MMFireSDK\V2Template32\Edittime.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\jstjean\LOCALS~1\Temp\RSP18.tmp" 
+Creating temporary file "C:\DOCUME~1\jstjean\LOCALS~1\Temp\RSP19.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib ..\lib\cncs32.lib /nologo /dll /incremental:no /pdb:".\Release/sql.pdb" /machine:I386 /def:".\Extobj32.def" /out:".\Release/sql.cox" /implib:".\Release/sql.lib" 
+".\Release\attach.obj"
+".\Release\auth.obj"
+".\Release\btree.obj"
+".\Release\btree_rb.obj"
+".\Release\build.obj"
+".\Release\copy.obj"
+".\Release\date.obj"
+".\Release\delete.obj"
+".\Release\Edittime.obj"
+".\Release\encode.obj"
+".\Release\expr.obj"
+".\Release\func.obj"
+".\Release\General.obj"
+".\Release\hash.obj"
+".\Release\insert.obj"
+".\Release\Main.obj"
+".\Release\opcodes.obj"
+".\Release\os.obj"
+".\Release\pager.obj"
+".\Release\parse.obj"
+".\Release\pragma.obj"
+".\Release\printf.obj"
+".\Release\random.obj"
+".\Release\RunOnly.obj"
+".\Release\Runtime.obj"
+".\Release\select.obj"
+".\Release\sqldb.obj"
+".\Release\sqlite.obj"
+".\Release\table.obj"
+".\Release\tokenize.obj"
+".\Release\trigger.obj"
+".\Release\update.obj"
+".\Release\util.obj"
+".\Release\vacuum.obj"
+".\Release\vdbe.obj"
+".\Release\vdbeaux.obj"
+".\Release\where.obj"
+".\Release\Extobj.res"
+]
+Creating command line "link.exe @C:\DOCUME~1\jstjean\LOCALS~1\Temp\RSP19.tmp"
+<h3>Output Window</h3>
+Compiling...
+Edittime.cpp
+Linking...
+   Creating library .\Release/sql.lib and object .\Release/sql.exp
+Creating temporary file "C:\DOCUME~1\jstjean\LOCALS~1\Temp\RSP1D.tmp" with contents
+[
+/nologo /o".\Release/V2Template32.bsc" 
+".\Release\attach.sbr"
+".\Release\auth.sbr"
+".\Release\btree.sbr"
+".\Release\btree_rb.sbr"
+".\Release\build.sbr"
+".\Release\copy.sbr"
+".\Release\date.sbr"
+".\Release\delete.sbr"
+".\Release\Edittime.sbr"
+".\Release\encode.sbr"
+".\Release\expr.sbr"
+".\Release\func.sbr"
+".\Release\General.sbr"
+".\Release\hash.sbr"
+".\Release\insert.sbr"
+".\Release\Main.sbr"
+".\Release\opcodes.sbr"
+".\Release\os.sbr"
+".\Release\pager.sbr"
+".\Release\parse.sbr"
+".\Release\pragma.sbr"
+".\Release\printf.sbr"
+".\Release\random.sbr"
+".\Release\RunOnly.sbr"
+".\Release\Runtime.sbr"
+".\Release\select.sbr"
+".\Release\sqldb.sbr"
+".\Release\sqlite.sbr"
+".\Release\table.sbr"
+".\Release\tokenize.sbr"
+".\Release\trigger.sbr"
+".\Release\update.sbr"
+".\Release\util.sbr"
+".\Release\vacuum.sbr"
+".\Release\vdbe.sbr"
+".\Release\vdbeaux.sbr"
+".\Release\where.sbr"]
+Creating command line "bscmake.exe @C:\DOCUME~1\jstjean\LOCALS~1\Temp\RSP1D.tmp"
+Creating browse info file...
+<h3>Output Window</h3>
+
+
+
+<h3>Results</h3>
+sql.cox - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

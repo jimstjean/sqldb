@@ -1,0 +1,185 @@
+<html>
+
+<head>
+<title>SQL Features That SQLite Does Not Implement</title>
+
+<style>
+<!--
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+h2
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:18.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+p
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=Section1>
+
+<h2>SQL Features That SQLite Does Not Implement</h2>
+
+<p>[This information is courtesy <a href="http://www.sqlite.org/">www.sqlite.org</a>.]
+</p>
+
+<p>Rather than try to list all the features of SQL92 that SQLite does support,
+it is much easier to list those that it does not. Unsupported features of SQL92
+are shown below.</p>
+
+<p>The order of this list gives some hint as to when a feature might be added
+to SQLite. Those features near the top of the list are likely to be added in
+the near future. There are no immediate plans to add features near the bottom
+of the list. </p>
+
+<table class=MsoNormalTable border=0 cellpadding=0>
+ <tr>
+  <td valign=top style='padding:7.5pt 7.5pt 7.5pt 7.5pt'>
+  <p class=MsoNormal><b>CHECK constraints</b></p>
+  </td>
+  <td width=10 style='width:7.5pt;padding:7.5pt 7.5pt 7.5pt 7.5pt'>
+  <p class=MsoNormal>&nbsp; </p>
+  </td>
+  <td valign=top style='padding:7.5pt 7.5pt 7.5pt 7.5pt'>
+  <p class=MsoNormal>CHECK constraints are parsed but they are not enforced.
+  NOT NULL and UNIQUE constraints are enforced, however. </p>
+  </td>
+ </tr>
+ <tr>
+  <td valign=top style='padding:7.5pt 7.5pt 7.5pt 7.5pt'>
+  <p class=MsoNormal><b>FOREIGN KEY constraints</b></p>
+  </td>
+  <td width=10 style='width:7.5pt;padding:7.5pt 7.5pt 7.5pt 7.5pt'>
+  <p class=MsoNormal>&nbsp; </p>
+  </td>
+  <td valign=top style='padding:7.5pt 7.5pt 7.5pt 7.5pt'>
+  <p class=MsoNormal>FOREIGN KEY constraints are parsed but are not enforced. </p>
+  </td>
+ </tr>
+ <tr>
+  <td valign=top style='padding:7.5pt 7.5pt 7.5pt 7.5pt'>
+  <p class=MsoNormal><b>Complete trigger support</b></p>
+  </td>
+  <td width=10 style='width:7.5pt;padding:7.5pt 7.5pt 7.5pt 7.5pt'>
+  <p class=MsoNormal>&nbsp; </p>
+  </td>
+  <td valign=top style='padding:7.5pt 7.5pt 7.5pt 7.5pt'>
+  <p class=MsoNormal>There is some support for triggers but it is not complete.
+  Missing subfeatures include FOR EACH STATEMENT triggers (currently all
+  triggers must be FOR EACH ROW), INSTEAD OF triggers on tables (currently
+  INSTEAD OF triggers are only allowed on views), and recursive triggers -
+  triggers that trigger themselves. </p>
+  </td>
+ </tr>
+ <tr>
+  <td valign=top style='padding:7.5pt 7.5pt 7.5pt 7.5pt'>
+  <p class=MsoNormal><b>Complete ALTER TABLE support</b></p>
+  </td>
+  <td width=10 style='width:7.5pt;padding:7.5pt 7.5pt 7.5pt 7.5pt'>
+  <p class=MsoNormal>&nbsp; </p>
+  </td>
+  <td valign=top style='padding:7.5pt 7.5pt 7.5pt 7.5pt'>
+  <p class=MsoNormal>Only the RENAME TABLE and ADD COLUMN variants of the ALTER
+  TABLE command are supported. Other kinds of ALTER TABLE operations such as
+  DROP COLUMN, ALTER COLUMN, ADD CONSTRAINT, and so forth are omitted. </p>
+  </td>
+ </tr>
+ <tr>
+  <td valign=top style='padding:7.5pt 7.5pt 7.5pt 7.5pt'>
+  <p class=MsoNormal><b>Nested transactions</b></p>
+  </td>
+  <td width=10 style='width:7.5pt;padding:7.5pt 7.5pt 7.5pt 7.5pt'>
+  <p class=MsoNormal>&nbsp; </p>
+  </td>
+  <td valign=top style='padding:7.5pt 7.5pt 7.5pt 7.5pt'>
+  <p class=MsoNormal>The current implementation only allows a single active
+  transaction. </p>
+  </td>
+ </tr>
+ <tr>
+  <td valign=top style='padding:7.5pt 7.5pt 7.5pt 7.5pt'>
+  <p class=MsoNormal><b>The COUNT(DISTINCT X) function</b></p>
+  </td>
+  <td width=10 style='width:7.5pt;padding:7.5pt 7.5pt 7.5pt 7.5pt'>
+  <p class=MsoNormal>&nbsp; </p>
+  </td>
+  <td valign=top style='padding:7.5pt 7.5pt 7.5pt 7.5pt'>
+  <p class=MsoNormal>You can accomplish the same thing using a subquery, like
+  this:<br>
+  &nbsp;&nbsp;SELECT count(x) FROM (SELECT DISTINCT x FROM tbl); </p>
+  </td>
+ </tr>
+ <tr>
+  <td valign=top style='padding:7.5pt 7.5pt 7.5pt 7.5pt'>
+  <p class=MsoNormal><b>RIGHT and </b><b>FULL</b><b> OUTER JOIN</b></p>
+  </td>
+  <td width=10 style='width:7.5pt;padding:7.5pt 7.5pt 7.5pt 7.5pt'>
+  <p class=MsoNormal>&nbsp; </p>
+  </td>
+  <td valign=top style='padding:7.5pt 7.5pt 7.5pt 7.5pt'>
+  <p class=MsoNormal>LEFT OUTER JOIN is implemented, but not RIGHT OUTER JOIN
+  or FULL OUTER JOIN. </p>
+  </td>
+ </tr>
+ <tr>
+  <td valign=top style='padding:7.5pt 7.5pt 7.5pt 7.5pt'>
+  <p class=MsoNormal><b>Writing to VIEWs</b></p>
+  </td>
+  <td width=10 style='width:7.5pt;padding:7.5pt 7.5pt 7.5pt 7.5pt'>
+  <p class=MsoNormal>&nbsp; </p>
+  </td>
+  <td valign=top style='padding:7.5pt 7.5pt 7.5pt 7.5pt'>
+  <p class=MsoNormal>VIEWs in SQLite are read-only. You may not execute a
+  DELETE, INSERT, or UPDATE statement on a view. But you can create a trigger
+  that fires on an attempt to DELETE, INSERT, or UPDATE a view and do what you
+  need in the body of the trigger. </p>
+  </td>
+ </tr>
+ <tr>
+  <td valign=top style='padding:7.5pt 7.5pt 7.5pt 7.5pt'>
+  <p class=MsoNormal><b>GRANT and REVOKE</b></p>
+  </td>
+  <td width=10 style='width:7.5pt;padding:7.5pt 7.5pt 7.5pt 7.5pt'>
+  <p class=MsoNormal>&nbsp; </p>
+  </td>
+  <td valign=top style='padding:7.5pt 7.5pt 7.5pt 7.5pt'>
+  <p class=MsoNormal>Since SQLite reads and writes an ordinary disk file, the
+  only access permissions that can be applied are the normal file access
+  permissions of the underlying operating system. The GRANT and REVOKE commands
+  commonly found on client/server RDBMSes are not implemented because they
+  would be meaningless for an embedded database engine. </p>
+  </td>
+ </tr>
+</table>
+
+<p>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,387 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "..\inc\ccx.h"
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+#include "ver.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+1 VERSIONINFO
+ FILEVERSION 3,0,3,0
+ PRODUCTVERSION 3,0,3,0
+ FILEFLAGSMASK 0x0L
+#ifdef _DEBUG
+ FILEFLAGS 0x21L
+#else
+ FILEFLAGS 0x20L
+#endif
+ FILEOS 0x10001L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "Clickteam\0"
+            VALUE "FileDescription", "StaticText Object\0"
+            VALUE "FileVersion", "3, 0, 3, 0\0"
+            VALUE "InternalName", "StaticText Object\0"
+            VALUE "LegalCopyright", "Copyright © 2003-2005 Clickteam\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "StaticText.mfx\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "\0"
+            VALUE "ProductVersion", "3, 0, 3, 0\0"
+            VALUE "SpecialBuild", "00000002\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Data
+//
+
+KPX_MAGICNUMBER RCDATA MOVEABLE PURE 
+BEGIN
+    0x2516, 0x5908
+END
+
+#if defined(APSTUDIO_INVOKED) || defined(VITALIZE)
+#if defined(APSTUDIO_INVOKED)
+VITALIZE_ID$(VITALIZE) RCDATA DISCARDABLE 
+#else
+VITALIZE_ID RCDATA DISCARDABLE 
+#endif
+BEGIN
+    0x0244, 0x5601, 0x7527, 0xa754, 0xbc60
+END
+#endif
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+#if defined(APSTUDIO_INVOKED) || defined(EDITOR)
+#if defined(APSTUDIO_INVOKED)
+EXO_ICON$(EDITOR)       BITMAP  MOVEABLE PURE   "res\\EXTICON.BMP"
+#else
+EXO_ICON                BITMAP  MOVEABLE PURE   "res\\EXTICON.BMP"
+#endif
+#endif
+#if defined(APSTUDIO_INVOKED) || defined(EDITOR)
+#if defined(APSTUDIO_INVOKED)
+EXO_IMAGE$(EDITOR)      BITMAP  MOVEABLE PURE   "res\\EXTIMG.BMP"
+#else
+EXO_IMAGE               BITMAP  MOVEABLE PURE   "res\\EXTIMG.BMP"
+#endif
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+#if defined(APSTUDIO_INVOKED) || defined(EDITOR)
+#if defined(APSTUDIO_INVOKED)
+MN_CONDITIONS$(EDITOR) MENU DISCARDABLE 
+#else
+MN_CONDITIONS MENU DISCARDABLE 
+#endif
+BEGIN
+    POPUP "Conditions"
+    BEGIN
+        MENUITEM SEPARATOR
+        POPUP "Click"
+        BEGIN
+            MENUITEM "Clicked with left button?",   IDMN_CONDITIONS_LCLICK
+            MENUITEM "Clicked with right button?",  IDMN_CONDITIONS_RCLICK
+            MENUITEM "Double click?",               IDMN_CONDITIONS_DBLCLICK
+        END
+        POPUP "Window"
+        BEGIN
+            MENUITEM "Is object visible?",          IDMN_CONDITIONS_ISVISIBLE
+
+        END
+    END
+END
+#endif
+
+#if defined(APSTUDIO_INVOKED) || defined(EDITOR)
+#if defined(APSTUDIO_INVOKED)
+MN_ACTIONS$(EDITOR) MENU DISCARDABLE 
+#else
+MN_ACTIONS MENU DISCARDABLE 
+#endif
+BEGIN
+    POPUP "Actions"
+    BEGIN
+        MENUITEM SEPARATOR
+        MENUITEM "Set text",                    IDMN_ACTION_SETTEXT
+        POPUP "Colors"
+        BEGIN
+            MENUITEM "Set text color",              IDMN_ACTION_SETTEXTCOLOR
+            MENUITEM "Set background color",        IDMN_ACTION_SETBACKCOLOR
+        END
+        POPUP "Window"
+        BEGIN
+            MENUITEM "Set width",                   IDMN_ACTION_SETWIDTH
+            MENUITEM "Set height",                  IDMN_ACTION_SETHEIGHT
+            MENUITEM SEPARATOR
+            MENUITEM "Show",                        IDMN_ACTION_SHOW
+            MENUITEM "Hide",                        IDMN_ACTION_HIDE
+        END
+    END
+END
+#endif
+
+#if defined(APSTUDIO_INVOKED) || defined(EDITOR)
+#if defined(APSTUDIO_INVOKED)
+MN_EXPRESSIONS$(EDITOR) MENU DISCARDABLE 
+#else
+MN_EXPRESSIONS MENU DISCARDABLE 
+#endif
+BEGIN
+    POPUP "Expressions"
+    BEGIN
+        MENUITEM SEPARATOR
+        MENUITEM "Get text",                    IDMN_EXPRESSIONS_GETTEXT
+        POPUP "Size"
+        BEGIN
+            MENUITEM "Get width",                   IDMN_EXPRESSIONS_GETWIDTH
+
+            MENUITEM "Get height",                  IDMN_EXPRESSIONS_GETHEIGHT
+
+        END
+    END
+END
+#endif
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_EDITTEXT DIALOG DISCARDABLE  0, 0, 186, 50
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Enter new button text"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_ENTERTEXTEDIT,7,7,172,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,7,29,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,129,29,50,14
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""..\\inc\\ccx.h""\r\n"
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""ver.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_EDITTEXT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 43
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+#if defined(APSTUDIO_INVOKED) || defined(EDITOR)
+#if defined(APSTUDIO_INVOKED)
+IDC_MOVE$(EDITOR)       CURSOR  DISCARDABLE     "res\\Move.cur"
+#else
+IDC_MOVE                CURSOR  DISCARDABLE     "res\\Move.cur"
+#endif
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    KPX_MARK                "MF2"
+    KPX_NAME                "Static Text"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDST_OBJNAME            "Static Text"
+    IDST_AUTHOR             "Francois Lionet"
+    IDST_COPYRIGHT          "Copyright (c) 2003-2005 Clickteam"
+    IDST_COMMENT            "Simple line of text displayed as a control."
+    IDST_HTTP               "http://www.clickteam.com"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ACTION_SETBACKCOLOR "%o: Set background color to %0"
+    IDS_ACTION_SETTEXTCOLOR "%o: Set text color to %0"
+    IDS_CONDITION_LCLICK    "%o: Click with left button"
+    IDS_CONDITION_RCLICK    "%o: Click with right button"
+    IDS_CONDITION_DBLCLICK  "%o: Double click"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ACTION_SHOW         "%o: Show"
+    IDS_ACTION_HIDE         "%o: Hide"
+    IDS_ACTION_SETWIDTH     "%o: Set width to %0"
+    IDS_ACTION_SETHEIGHT    "%o: Set height to %0"
+    IDS_EXPRESSION_GETWIDTH "Width("
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_EXPRESSION_GETHEIGHT "Height("
+    IDS_CONDITION_ISVISIBLE "%o: Is object visible?"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PROP_CLIENT         "Client edge"
+    IDS_PROP_CLIENT_INFO    "Click to display a client edge around the control"
+    IDS_EXPRESSION_GETTEXT  "Text$("
+    IDS_PROP_STYLES         "Text alignement"
+    IDS_PROP_STYLES_INFO    "Choose how to align the text"
+    IDS_PROP_BACKCOLOR      "Background color"
+    IDS_PROP_BACKCOLOR_INFO "Choose the color of the background"
+    IDS_PROP_FONTCOLOR      "Font color"
+    IDS_PROP_FONTCOLOR_INFO "Choose the color of the font"
+    IDS_PROP_TEXT           "Text"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PROP_TEXT_INFO      "Enter the text to display"
+    IDS_LEFT                "Left"
+    IDS_CENTER              "Center"
+    IDS_RIGHT               "Right"
+    IDS_PROP_BORDERGROUP    "Window"
+    IDS_PROP_SINGLELINE     "Single line"
+    IDS_PROP_SINGLELINE_INFO "Display the text on one line only"
+    IDS_PROP_VCENTER        "Vertical center"
+    IDS_PROP_VCENTER_INFO   "Centers the text vertically (single line only)"
+    IDS_PROP_PATHELLIPSIS   "Path ellipsis"
+    IDS_PROP_PATHELLIPSIS_INFO 
+                            "Replaces part of the string by ... in the middle to fit"
+    IDS_PROP_ENDELLIPSIS    "End ellipsis"
+    IDS_PROP_ENDELLIPSIS_INFO "Replaces the end of the string by ... to fit"
+    IDS_ACTION_SETTEXT      "%o: Set text to %0"
+    IDS_SETTEXT             "Enter new text"
+    IDS_SETWIDTH            "Enter new width"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PROP_VISIBLE        "Visible at start"
+    IDS_PROP_BORDER         "Border"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PROP_VISIBLE_INFO   "Makes the control visible at start of frame"
+    IDS_PROP_BORDER_INFO    "Check to display a border around the control"
+    IDS_PROP_STATIC         "Static edge"
+    IDS_PROP_STATIC_INFO    "Check to display a static edge around the control"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_SETHEIGHT           "Enter new height"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

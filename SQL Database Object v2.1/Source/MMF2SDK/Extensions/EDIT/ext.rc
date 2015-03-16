@@ -1,0 +1,345 @@
+
+#ifdef APSTUDIO_INVOKED
+	#error this file is not editable by Microsoft Visual C++
+#endif //APSTUDIO_INVOKED
+
+#include "..\inc\ccx.h"
+#include "windows.h"
+#include "ver.h"
+#include "extrc.h"
+#include "ext.h"
+
+// Change in GFactory: VERSIONINFO
+
+
+// Strings
+STRINGTABLE 
+{
+ KPX_NAME, "Edit"
+}
+
+// Version infos
+1 VERSIONINFO 
+FILEVERSION 3, 0, 3, 0
+PRODUCTVERSION 3, 0, 3, 0
+FILEOS VOS_DOS_WINDOWS16
+FILETYPE VFT_APP
+FILEFLAGS 0x20L
+{
+ BLOCK "StringFileInfo"
+ {
+  BLOCK "040904E4"
+  {
+   VALUE "CompanyName", "Clickteam\000\000"
+   VALUE "FileDescription", "Edit Object\000"
+   VALUE "FileVersion", "3, 0, 3, 0\000\000"
+   VALUE "InternalName", "KCEDIT\000"
+   VALUE "LegalCopyright", "Copyright © 1996-2005 Clickteam\000\000"
+   VALUE "OriginalFilename", "KCEDIT.MFX\000"
+   VALUE "SpecialBuild", "00000002\000"
+  }
+ }
+
+ BLOCK "VarFileInfo"
+ {
+  VALUE "Translation", 0x409, 1252
+ }
+}
+
+
+#ifdef VITALIZE
+VITALIZE_ID RCDATA
+{
+	0x0244, 0x5601, 0x7527, 0xA754, 0xBC60
+}
+#endif
+
+
+#ifndef RUN_ONLY
+
+// Magic number
+KPX_MAGICNUMBER	RCDATA
+{
+	0x2516, 0x5908
+}
+
+
+// Strings
+STRINGTABLE 
+{
+ KPX_MARK, "MF2"
+ M_EDITORDISPLAY1, " Edit object"
+ M_EDITORDISPLAY2, " Edit object\n ...\n ...\n ...\n ...\n ...\n ...\n ...\n ...\n ...\n ...\n ...\n ..."
+}
+
+
+// CONDITIONS
+// ------------------
+MN_CONDITIONS MENU
+{
+ POPUP ""
+ {
+  MENUITEM "Has entry zone just been modified?",		(ID_MENUCONDITIONS+CND_MODIFIED)
+  MENUITEM "Does entry zone have input focus?",			(ID_MENUCONDITIONS+CND_HAVEFOCUS)
+  MENUITEM "Is entry zone enabled?",					(ID_MENUCONDITIONS+CND_ENABLE)
+  MENUITEM "Is entry zone visible?",					(ID_MENUCONDITIONS+CND_VISIBLE)
+  MENUITEM "Is undo information available?",			(ID_MENUCONDITIONS+CND_CANUNDO)
+  MENUITEM "Is text a number?",							(ID_MENUCONDITIONS+CND_ISNUMBER)
+  MENUITEM "Is text selected?",							(ID_MENUCONDITIONS+CND_ISSELECTED)
+ }
+}
+STRINGTABLE
+{
+	(M_DISPCONDITIONS+CND_VISIBLE)						"10%s: is visible"
+	(M_DISPCONDITIONS+CND_ENABLE)						"10%s: is enabled"
+	(M_DISPCONDITIONS+CND_HAVEFOCUS)					"10%s: have input focus"
+	(M_DISPCONDITIONS+CND_CANUNDO)						"10%s: undo infomation available"
+	(M_DISPCONDITIONS+CND_MODIFIED)						"10%s: has just been modified"
+	(M_DISPCONDITIONS+CND_ISNUMBER)						"10%s: text is a number"
+	(M_DISPCONDITIONS+CND_ISSELECTED)					"10%s: some text is selected"
+}
+
+
+
+
+
+// ACTIONS 
+// -------
+MN_ACTIONS MENU
+{
+ POPUP ""
+ {
+  POPUP "Files"
+  {
+   MENUITEM "Load text file",							(ID_MENUACTIONS+ACT_LOADTEXT)
+   MENUITEM "Load text file via a file selector",		(ID_MENUACTIONS+ACT_LOADTEXTSELECT)
+   MENUITEM "Save text file",							(ID_MENUACTIONS+ACT_SAVETEXT)
+   MENUITEM "Save text file via a file selector",		(ID_MENUACTIONS+ACT_SAVETEXTSELECT)
+  }
+  POPUP "Editing"
+  {
+   MENUITEM "Set text",									(ID_MENUACTIONS+ACT_SETTEXT)
+   POPUP "Block"
+   {
+    MENUITEM "Replace selection",						(ID_MENUACTIONS+ACT_REPLACESELECTION)
+    MENUITEM "Cut",										(ID_MENUACTIONS+ACT_CUT)
+    MENUITEM "Copy",									(ID_MENUACTIONS+ACT_COPY)
+    MENUITEM "Paste",									(ID_MENUACTIONS+ACT_PASTE)
+    MENUITEM "Clear",									(ID_MENUACTIONS+ACT_CLEAR)
+   }
+   POPUP "Undo"
+   {
+    MENUITEM "Undo",									(ID_MENUACTIONS+ACT_UNDO)
+    MENUITEM "Clear undo buffer",						(ID_MENUACTIONS+ACT_CLEARUNDOBUFFER)
+   }
+   POPUP "Scrolling"
+   {
+	  MENUITEM "Scroll To Top",							(ID_MENUACTIONS+ACT_SCROLLTOTOP)
+	  MENUITEM "Scroll To Line",						(ID_MENUACTIONS+ACT_SCROLLTOLINE)
+	  MENUITEM "Scroll To End",							(ID_MENUACTIONS+ACT_SCROLLTOEND)
+   }
+  }
+  POPUP "Control"
+  {
+   MENUITEM "Limit text size",							(ID_MENUACTIONS+ACT_LIMITTEXTSIZE)
+   POPUP "Focus"
+   {
+    MENUITEM "On",										(ID_MENUACTIONS+ACT_ACTIVATE)
+    MENUITEM "Off",										(ID_MENUACTIONS+ACT_DESACTIVATE)
+   }
+   POPUP "Enabled"
+   {
+    MENUITEM "On",										(ID_MENUACTIONS+ACT_ENABLE)
+    MENUITEM "Off",										(ID_MENUACTIONS+ACT_DISABLE)
+   }
+   POPUP "Read only"
+   {
+    MENUITEM "On",										(ID_MENUACTIONS+ACT_READONLYON)
+    MENUITEM "Off",										(ID_MENUACTIONS+ACT_READONLYOFF)
+   }
+   POPUP "Force text modified flag"
+   {
+    MENUITEM "On",										(ID_MENUACTIONS+ACT_TEXTMODIFIED)
+    MENUITEM "Off",										(ID_MENUACTIONS+ACT_TEXTNOTMODIFIED)
+   }
+   POPUP "Aspect"
+   {
+    MENUITEM "Set font via a selector",					(ID_MENUACTIONS+ACT_SETFONTSELECT)
+    MENUITEM SEPARATOR
+    MENUITEM "Set text color",							(ID_MENUACTIONS+ACT_SETCOLOR)
+    MENUITEM "Set background color",					(ID_MENUACTIONS+ACT_SETBKDCOLOR)
+    MENUITEM "Set background color via a selector",		(ID_MENUACTIONS+ACT_SETCOLORSELECT)
+   }
+  }
+//  POPUP "Position"
+//  {
+//   MENUITEM "Set Position...",							(ID_MENUACTIONS+ACT_SETPOSITION)
+//   MENUITEM "Set Horizontal Position",					(ID_MENUACTIONS+ACT_SETXPOSITION)
+//   MENUITEM "Set Vertical Position",					(ID_MENUACTIONS+ACT_SETYPOSITION)
+//  }
+  POPUP "Size"
+  {
+   MENUITEM "Set Horizontal Size",						(ID_MENUACTIONS+ACT_SETXSIZE)
+   MENUITEM "Set Vertical Size",						(ID_MENUACTIONS+ACT_SETYSIZE)
+  }
+  POPUP "Visibility"
+  {
+   MENUITEM "Make Object Invisible",					(ID_MENUACTIONS+ACT_HIDE)
+   MENUITEM "Make Object Reappear",						(ID_MENUACTIONS+ACT_SHOW)
+  }
+ }
+}
+STRINGTABLE
+{
+	(M_DISPACTIONS+ACT_LOADTEXT),						"01Load text file %s"
+	(M_DISPACTIONS+ACT_LOADTEXTSELECT),					"00Load text file via a file selector"
+	(M_DISPACTIONS+ACT_SAVETEXT),						"01Save text file %s"
+	(M_DISPACTIONS+ACT_SAVETEXTSELECT),					"00Save text file via a file selector"
+	(M_DISPACTIONS+ACT_SETTEXT),						"01Set text %s"
+	(M_DISPACTIONS+ACT_REPLACESELECTION),				"01Replace selection by %s"
+	(M_DISPACTIONS+ACT_CUT),							"00Cut"
+	(M_DISPACTIONS+ACT_COPY),							"00Copy"
+	(M_DISPACTIONS+ACT_PASTE),							"00Paste"
+	(M_DISPACTIONS+ACT_CLEAR),							"00Clear"
+	(M_DISPACTIONS+ACT_UNDO),							"00Undo"
+	(M_DISPACTIONS+ACT_CLEARUNDOBUFFER),				"00Clear undo buffer"
+	(M_DISPACTIONS+ACT_SHOW),							"00Show"
+	(M_DISPACTIONS+ACT_HIDE),							"00Hide"
+	(M_DISPACTIONS+ACT_SETFONTSELECT),					"00Set font via a selector"
+	(M_DISPACTIONS+ACT_SETCOLORSELECT),					"00Set background color via a selector"
+	(M_DISPACTIONS+ACT_ACTIVATE),						"00Set focus on"
+	(M_DISPACTIONS+ACT_DESACTIVATE),					"00Set focus off"
+	(M_DISPACTIONS+ACT_ENABLE),							"00Highlight"
+	(M_DISPACTIONS+ACT_DISABLE),						"00Dehighlight"
+	(M_DISPACTIONS+ACT_READONLYON),						"00Read only on"
+	(M_DISPACTIONS+ACT_READONLYOFF),					"00Read only off"
+	(M_DISPACTIONS+ACT_TEXTMODIFIED),					"00Text modified flag on"
+	(M_DISPACTIONS+ACT_TEXTNOTMODIFIED),				"00Text modified flag off"
+	(M_DISPACTIONS+ACT_LIMITTEXTSIZE),					"01Limit text size to %s"
+	(M_DISPACTIONS+ACT_SETPOSITION),					"01Set position to %s"
+	(M_DISPACTIONS+ACT_SETXPOSITION),					"01Set horizontal position to %s"
+	(M_DISPACTIONS+ACT_SETYPOSITION),					"01Set vertical position to %s"
+	(M_DISPACTIONS+ACT_SETSIZE),						"00WARNING !!! Change this action to set horizontal size + set vertical size"
+	(M_DISPACTIONS+ACT_SETXSIZE),						"01Set horizontal size to %s"
+	(M_DISPACTIONS+ACT_SETYSIZE),						"01Set vertical size to %s"
+	(M_DISPACTIONS+ACT_SCROLLTOTOP),					"00Scroll To Top"
+	(M_DISPACTIONS+ACT_SCROLLTOLINE),					"01Scroll To Line %s"
+	(M_DISPACTIONS+ACT_SCROLLTOEND),					"00Scroll To End"
+	(M_DISPACTIONS+ACT_SETCOLOR),						"01Set text color to %s"
+	(M_DISPACTIONS+ACT_SETBKDCOLOR),					"01Set background color to %s"
+}
+
+
+
+
+
+// EXPRESSIONS
+// -----------
+MN_EXPRESSIONS MENU
+{
+ POPUP ""
+ {
+  MENUITEM "Get text",								(ID_MENUEXPRESSIONS+EXP_GETTEXT)
+  MENUITEM "Get selected text",						(ID_MENUEXPRESSIONS+EXP_GETSELECTION)
+  MENUITEM "Get numeric value",						(ID_MENUEXPRESSIONS+EXP_GETVALUE)
+  MENUITEM "Get first visible line",				(ID_MENUEXPRESSIONS+EXP_GETFIRSTLINE)
+  MENUITEM "Get line count",						(ID_MENUEXPRESSIONS+EXP_GETLINECOUNT)
+//  POPUP "Position"
+//  {
+//   MENUITEM "Get X Position",						(ID_MENUEXPRESSIONS+EXP_GETXPOSITION)
+//   MENUITEM "Get Y Position",						(ID_MENUEXPRESSIONS+EXP_GETYPOSITION)
+//  }
+  POPUP "Color"
+  {
+   MENUITEM "Get Text Color",						(ID_MENUEXPRESSIONS+EXP_GETCOLOR)
+   MENUITEM "Get Background Color",					(ID_MENUEXPRESSIONS+EXP_GETBKDCOLOR)
+  }
+  POPUP "Size"
+  {
+   MENUITEM "Get X Size",							(ID_MENUEXPRESSIONS+EXP_GETXSIZE)
+   MENUITEM "Get Y Size",							(ID_MENUEXPRESSIONS+EXP_GETYSIZE)
+  }
+ }
+}
+STRINGTABLE
+{
+	(M_DISPEXPRESSIONS+EXP_GETTEXT),				"Edittext$("
+	(M_DISPEXPRESSIONS+EXP_GETSELECTION),			"Editselect$("
+	(M_DISPEXPRESSIONS+EXP_GETXPOSITION),			"Edit X pos("
+	(M_DISPEXPRESSIONS+EXP_GETYPOSITION),			"Edit Y pos("
+	(M_DISPEXPRESSIONS+EXP_GETXSIZE),				"Edit X size("
+	(M_DISPEXPRESSIONS+EXP_GETYSIZE),				"Edit Y size("
+	(M_DISPEXPRESSIONS+EXP_GETVALUE),				"Edit Value("
+	(M_DISPEXPRESSIONS+EXP_GETFIRSTLINE),			"EditFirstLine("
+	(M_DISPEXPRESSIONS+EXP_GETLINECOUNT),			"EditLineCount("
+	(M_DISPEXPRESSIONS+EXP_GETCOLOR),				"GetTextColor("
+	(M_DISPEXPRESSIONS+EXP_GETBKDCOLOR),			"GetBkdColor("
+}
+
+// User bitmaps
+EXO_ICON BITMAP "res\exticon.bmp"
+
+#endif
+
+
+
+// TEXT
+// ----
+STRINGTABLE 
+{
+ M_TEXTTITLE,		"Please select a text file"
+ M_TEXTFILTER,		"Text Files|*.txt;*.asc|"
+ IDST_OBJNAME		"Edit object"		
+ IDST_AUTHOR		"ClickTeam"
+ IDST_COPYRIGHT		"Copyright © 1996-2005 Clickteam"
+ IDST_COMMENT		"Simple editable text box."
+ IDST_HTTP			"http://www.clickteam.com"
+ IDS_ENTERLINE		"Enter line number"
+
+ IDS_PROP_SETTINGS				"Settings"
+ IDS_PROP_SETTINGS_INFO			"Edit object settings"
+ IDS_PROP_MULTILINE				"Multiline"
+ IDS_PROP_MULTILINE_INFO		"Allows more than one line to edit"
+ IDS_PROP_TABSTOP				"Tab stop"
+ IDS_PROP_TABSTOP_INFO			"Allows selection of the edit object by pressing TAB"
+ IDS_PROP_PASSWORD				"Password"
+ IDS_PROP_PASSWORD_INFO			"Hides the text"
+ IDS_PROP_SYSTEMCOLORS			"System colors"
+ IDS_PROP_SYSTEMCOLORS_INFO		"Display system colors"
+ IDS_PROP_TRANSPARENT			"Transparent"
+ IDS_PROP_TRANSPARENT_INFO		"Make the background transparent"
+ IDS_PROP_BORDER				"Border"
+ IDS_PROP_BORDER_INFO			"Displays a border around the object"
+ IDS_PROP_HIDEONSTART			"Hide on start"
+ IDS_PROP_HIDEONSTART_INFO		"Hides the object at start of frame"
+ IDS_PROP_READONLY				"Read only"
+ IDS_PROP_READONLY_INFO			"Make the object unmodifiable by the user"
+ IDS_PROP_3DLOOK				"3D Look"
+ IDS_PROP_3DLOOK_INFO			"Displays a 3D border"
+
+ IDS_PROP_GENERAL				"General settings"
+ IDS_PROP_SCROLLING				"Scrollings"
+ IDS_PROP_HSCROLLBAR			"Horizontal scrollbar"
+ IDS_PROP_HSCROLLBAR_INFO		"Displays an horizontal scrollbar"
+ IDS_PROP_HAUTOSCROLL			"Horizontal autoscroll"
+ IDS_PROP_HAUTOSCROLL_INFO		"Automatically scrolls the text if too big"
+ IDS_PROP_VSCROLLBAR			"Vertical scroll bar"
+ IDS_PROP_VSCROLLBAR_INFO		"Displays a vertical scrollbar if necessary"
+ IDS_PROP_VAUTOSCROLL			"Vertical autoscroll"
+ IDS_PROP_VAUTOSCROLL_INFO		"Automatically scrolls the text vertically if too big"
+
+ IDS_PROP_MISC					"Misc."
+ IDS_PROP_CASE					"Case modification"
+ IDS_PROP_CASE_INFO				"Enforce a case type on the text"
+ IDS_PROP_BACKGROUND			"Background color"
+ IDS_PROP_BACKGROUND_INFO		"Color of the background if non transparent"
+ IDS_CASE_NONE					"No modifications"
+ IDS_CASE_UPPERCASE				"Turn to uppercase"
+ IDS_CASE_LOWERCASE				"Turn to lowercase"
+
+ IDS_DBSTRING					"String: %s      "
+}
+ 
+ 
+ 
+ 

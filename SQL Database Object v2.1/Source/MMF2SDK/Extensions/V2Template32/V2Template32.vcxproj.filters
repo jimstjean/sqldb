@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{9be0de2f-cebb-48e7-8ca0-3ce90c54c497}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{e6197657-cb02-43b8-8d36-217eb79ae935}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{1d74f0b3-76da-41e0-9367-f7ae7af5ae1b}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="Information">
+      <UniqueIdentifier>{9bf3eef8-cf7c-416d-b9ac-b9d2acabfe89}</UniqueIdentifier>
+      <Extensions>txt</Extensions>
+    </Filter>
+    <Filter Include="MMF Headers">
+      <UniqueIdentifier>{003f660c-ceed-49ea-816c-ec5bb56479ce}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Edittime.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="General.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RunOnly.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Runtime.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sqldb.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sqlite3.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Extobj.rc">
+      <Filter>Source Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Extobj32.def">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="EXTICON.BMP">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="EXTIMG.BMP">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Common.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Main.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sqldb.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sqlite.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sqliteInt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\Program Files\Microsoft Visual Studio\Vc98\Include\Basetsd.h">
+      <Filter>MMF Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\Ccx.h">
+      <Filter>MMF Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\Ccxhdr.h">
+      <Filter>MMF Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\Mmf\Cncf.h">
+      <Filter>MMF Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\Mmf\Cncy.h">
+      <Filter>MMF Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\Cnpdll.h">
+      <Filter>MMF Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\colors.h">
+      <Filter>MMF Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\Mmf\Evtccx.h">
+      <Filter>MMF Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\Ptype.h">
+      <Filter>MMF Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\Surface.h">
+      <Filter>MMF Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Inc\WinMacro.h">
+      <Filter>MMF Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="sqlite3.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sqlite3ext.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuildStep Include="..\Debug.txt">
+      <Filter>Information</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="..\Extdev.hlp">
+      <Filter>Information</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="..\Global_Object_Code.zip">
+      <Filter>Information</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="..\Graphic_Object_Ex.txt">
+      <Filter>Information</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="..\Identifier.exe">
+      <Filter>Information</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="..\MMFSDK15.txt">
+      <Filter>Information</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="..\OEFLAGS.txt">
+      <Filter>Information</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="..\SDK2_Changes.txt">
+      <Filter>Information</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="..\Surfaces.txt">
+      <Filter>Information</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="..\Vitalizing.txt">
+      <Filter>Information</Filter>
+    </CustomBuildStep>
+  </ItemGroup>
+</Project>

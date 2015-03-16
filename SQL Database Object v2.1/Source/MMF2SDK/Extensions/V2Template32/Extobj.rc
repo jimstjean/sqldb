@@ -1,0 +1,313 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "..\inc\ccx.h"
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+#include "winver.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+1 VERSIONINFO
+ FILEVERSION 1,3,0,0
+ PRODUCTVERSION 1,3,0,0
+ FILEFLAGSMASK 0x0L
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x10001L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "James St. Jean\0"
+            VALUE "FileDescription", "SQL Database Object Extension for Multimedia Fusion 2.5\0"
+            VALUE "FileVersion", "2.1\0"
+            VALUE "InternalName", "SQLDB\0"
+            VALUE "LegalCopyright", "Copyright © 2004-2015 James St. Jean\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "SQL.MFX\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "\0"
+            VALUE "ProductVersion", "2, 1, 0, 0\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Data
+//
+
+KPX_MAGICNUMBER RCDATA MOVEABLE PURE 
+BEGIN
+    0x2516, 0x5908
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+EXO_ICON                BITMAP  MOVEABLE PURE   "EXTICON.BMP"
+EXO_IMAGE               BITMAP  MOVEABLE PURE   "EXTIMG.BMP"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+MN_CONDITIONS MENU DISCARDABLE 
+BEGIN
+    POPUP ""
+    BEGIN
+        MENUITEM "SQL Error?",                  CID_conditionOnSQLError
+        MENUITEM "DB Open?",                    CID_conditionDBOpen
+    END
+END
+
+MN_ACTIONS MENU DISCARDABLE 
+BEGIN
+    POPUP ""
+    BEGIN
+        MENUITEM "Open File",                   AID_actionOpenFile
+        MENUITEM "Open File from selector",     AID_actionOpenFileSelect
+        MENUITEM "Close File",                  AID_actionCloseFile
+        MENUITEM "Run SQL",                     AID_actionRunSQL
+        MENUITEM "Set Current Row",             AID_actionSetRow
+        MENUITEM "Set Current Column",          AID_actionSetCol
+        MENUITEM "Clear Last Error",            AID_actionClearErr
+    END
+END
+
+MN_EXPRESSIONS MENU DISCARDABLE 
+BEGIN
+    POPUP ""
+    BEGIN
+        MENUITEM "Get Num Rows",                EID_expressionRows
+        MENUITEM "Get Num Cols",                EID_expressionCols
+        MENUITEM "Get Current Row Index",       EID_expressionCurrRow
+        MENUITEM "Get Current Column Index",    EID_expressionCurrCol
+        MENUITEM "Get Data",                    EID_expressionData
+        MENUITEM "Get Data from Row, Col",      EID_expressionDataRowCol
+        MENUITEM "Get Column Name",             EID_expressionColumnName
+        MENUITEM "Get Data from Col Name",      EID_expressionDataColbyName
+        MENUITEM "Get Data from Row, Col Name", EID_expressionDataRowColbyName
+
+        MENUITEM "Quote",                       EID_expressionQuote
+        MENUITEM "Get Error Code",              EID_expressionErr
+        MENUITEM "Get Error Message",           EID_expressionErrMsg
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+DB_SETUP DIALOG DISCARDABLE  0, 4, 200, 130
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION
+CAPTION "SQL Database Object v2.1"
+FONT 8, "Helv"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,6,106,50,14
+    PUSHBUTTON      "Help",ID_HELP,138,106,50,14
+    GROUPBOX        "",IDC_STATIC,5,6,183,89
+    CTEXT           "SQL Database Object MMF Extension v2.1",IDC_STATIC,18,
+                    26,155,12
+    CTEXT           " (c) 2004-2015, James St. Jean.",IDC_STATIC,16,39,160,11
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""..\\inc\\ccx.h""\r\n"
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""ver.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    KPX_MARK                "MF2"
+    KPX_NAME                "SQLDB"
+//    M_DESC                  " %s : SQL Database object"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDST_OBJNAME            "SQL Database Object"
+    IDST_AUTHOR             "Jim St. Jean"
+    IDST_COPYRIGHT          "Copyright © 2004-2006 James St. Jean"
+    IDST_HTTP               "http://www.extramind.com"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    CID_conditionOnSQLError "%o Error"
+    CID_conditionDBOpen     "%o Database Open"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AID_actionOpenFile      "Open Database file (string: %0)"
+    AP0ID_actionOpenFile    "Database file name"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AID_actionOpenFileSelect "Open Database file from selector"
+    AP0ID_actionOpenFileSelect "Database file name"
+    AID_actionCloseFile     "Close Database file"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AID_actionRunSQL        "Run SQL String %0"
+    AP0ID_actionRunSQL      "SQL String"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AID_actionSetRow        "Set Current Row %0"
+    AP0ID_actionSetRow      "Row Number"
+    AID_actionSetCol        "Set Current Column %0"
+    AP0ID_actionSetCol      "Column Number"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AID_actionClearErr      "Clear Last Error"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    EID_expressionData      "Data("
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    EID_expressionColumnName "ColumnName("
+    EID_expressionRows      "Rows("
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    EID_expressionCols      "Cols("
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    EID_expressionErr       "Err("
+    EID_expressionErrMsg    "ErrMsg("
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    EID_expressionDataRowCol "DataRowCol("
+    EP0ID_expressionDataRowCol "Row Index (1 base)"
+    EP1ID_expressionDataRowCol "Col Index (1 base)"
+    EID_expressionDataColbyName "DataColbyName("
+    EP0ID_expressionDataColbyName "Column Name"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    EID_expressionDataRowColbyName "DataRowColbyName("
+    EP0ID_expressionDataRowColbyName "Row Index (1 base)"
+    EP1ID_expressionDataRowColbyName "Column Name"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    EID_expressionQuote     "Quote("
+    EP0ID_expressionQuote   "String to Convert"
+    EID_expressionCurrRow   "CurrRow("
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    EID_expressionCurrCol   "CurrCol("
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

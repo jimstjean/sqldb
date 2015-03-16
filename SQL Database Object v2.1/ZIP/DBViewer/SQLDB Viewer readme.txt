@@ -1,0 +1,2 @@
+Use this program to examine your databases, and test SQL statements to use in your program.
+Run the program, open a database (or create one), and you will see all tables on the left. Click on one to see the contents. Use the SQL to Execute box to execute/test SQL data against your database.

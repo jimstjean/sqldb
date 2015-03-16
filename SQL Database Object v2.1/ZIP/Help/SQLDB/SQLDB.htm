@@ -1,0 +1,822 @@
+<html>
+
+<head>
+<title>SQL Database Object – MMF Extension</title>
+
+<style>
+<!--
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+h1
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+h2
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:Arial;
+	font-weight:bold;
+	font-style:italic;}
+h3
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:13.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+h5
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	font-size:13.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;
+	font-style:italic;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+p
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+code
+	{font-family:"Courier New";}
+pre
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:10.0pt;
+	font-family:"Courier New";}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:.8in 1.25in .8in 1.25in;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=Section1>
+
+<h1 align=center style='text-align:center'>SQL Database Object v2.1 – MMF
+Extension</h1>
+
+<p class=MsoNormal align=center style='text-align:center'>© 2004-2015 J. St.
+Jean</p>
+
+<h2>Overview</h2>
+
+<p class=MsoNormal>The SQL Database Object is a standalone MMF component that acts
+as a fast, powerful local data store for MMF application or game information. This
+LE edition is an initial release that is free for personal, professional, and
+commercial use. The SQL Database Object is substantially more useful and
+flexible than data files, INI files, or XML files because it supports powerful
+write, read, and query functions on diverse and potentially large data sets. A
+single database can store the contents of multiple data files or INI files and
+provides a much more powerful and flexible interface.</p>
+
+<p class=MsoNormal>Unlike database connectors that rely on ODBC or other
+database APIs to connect to a separately installed database such as MS Access
+or mySQL, the SQL Database Object is itself a fully operational database and
+requires no other software. Adding powerful database capabilities to your
+application is as simple as loading the single <b>sql.mfx</b> file onto your
+machine and distributing the file with your applications.</p>
+
+<p class=MsoNormal>A file on the file system acts as the persistent store (database)
+for the SQL Database Object. Different databases can be opened and used by
+different applications or even within the same application. Using a database is
+achieved by first opening the file, then issuing commands. All results are
+returned in a simple array result set structure and can be accessed by row and
+column index or by name.</p>
+
+<p class=MsoNormal>SQL stands for Structured Query Language. SQL is a robust
+and easy to use command language to manipulate and search relational data (rows
+and columns of data). The SQL Database Object internally uses the open-source <a
+href="http://www.sqlite.org/">SQLite</a> database engine (version 3.8.8),
+which supports a large subset of the full SQL command language. Some primary
+SQL functions supported by the SQL Database Object include INSERT, UPDATE,
+DELETE, COPY, CREATE, DROP, and of course SELECT. TRANSACTIONS are also supported.
+A detailed description of the SQL commands and query language supported by the
+SQL Database Object’s internal SQLite database engine can be found <a
+href="SQL%20As%20Understood%20By%20SQLite.htm">here</a>. </p>
+
+<h2>Extension Usage</h2>
+
+<p class=MsoNormal>This section covers the basics of using the SQL Database
+Object. Full details of the various operations you can perform using the SQL
+Database Object and their APIs are provided in a later section.</p>
+
+<h3>Basic Operation</h3>
+
+<p class=MsoNormal>Using the SQL Database object is simple:</p>
+
+<ol style='margin-top:0in' start=1 type=1>
+ <li class=MsoNormal style='margin-bottom:3.0pt'>Open a database file at the
+     start of your application<span style='font-size:10.0pt'>:</span><span
+     style='font-size:10.0pt;font-family:"Courier New"'> <i>SQLDB.OpenFile(“filename.db”)</i></span></li>
+ <li class=MsoNormal style='margin-bottom:3.0pt'>Read/write data or perform
+     other operations using standard SQL statements:<span style='font-size:
+     10.0pt;font-family:"Courier New"'> <i>SQLDB.RunSQL(“SELECT * FROM
+     myTable”)</i></span></li>
+ <li class=MsoNormal style='margin-bottom:3.0pt'>Access data in the result set:<span
+     style='font-size:10.0pt;font-family:"Courier New"'> <i>MyString =
+     SQLDB.Data(1,1)</i></span></li>
+ <li class=MsoNormal style='margin-bottom:3.0pt'>Close the database file at the
+     end of your application:<span style='font-size:10.0pt;font-family:"Courier New"'>
+     <i>SQLDB.CloseFile</i></span></li>
+</ol>
+
+<p class=MsoNormal>The SQL Database object retains the results of the last
+operation in an internal, two dimensional array. The contents of this array can
+be accessed using (x,y) numerical coordinates where x is the row, and y is the
+column. Columns in the current row can also be accessed by name. The object
+maintains the concept of a current row and current column, the contents on this
+cell in the result set can always be accessed without any additional
+parameters. The database can sort, compute, and compare data elements using
+types such as integers, floats, or string, however all result set data is always
+stored and returned as strings.</p>
+
+<p class=MsoNormal>The object has been designed to support a common pattern of
+database usage where the database is opened once at the beginning of the
+application, then used multiple times throughout the application and in
+multiple different frames, and then the database is closed when the application
+closes.</p>
+
+<p class=MsoNormal><b>Example</b></p>
+
+<p class=MsoNormal>The following provides a detailed example of using the SQL
+Database Object and accessing its result set: </p>
+
+<div style='border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
+
+<p class=MsoNormal style='border:none;padding:0in'><span style='font-size:10.0pt;
+font-family:"Courier New"'>As an example, suppose we had a database opened, which
+contains a table <b>People</b> containing columns <b>Name</b> and <b>Age</b>,
+and the following five rows:</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;border:none;
+padding:0in'><span style='font-size:10.0pt;font-family:"Courier New"'>        <b><u>Name       
+| Age</u></b></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;border:none;
+padding:0in'><span style='font-size:10.0pt;font-family:"Courier New"'>        </span><span
+  style='font-size:10.0pt;font-family:"Courier New"'>Alice</span><span
+style='font-size:10.0pt;font-family:"Courier New"'>       | 43</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;border:none;
+padding:0in'><span style='font-size:10.0pt;font-family:"Courier New"'>        Fred
+       | 18</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;border:none;
+padding:0in'><span style='font-size:10.0pt;font-family:"Courier New"'>       
+Bob         | 28</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;border:none;
+padding:0in'><span style='font-size:10.0pt;font-family:"Courier New"'>       
+Cindy       | 21</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;border:none;
+padding:0in'><span style='font-size:10.0pt;font-family:"Courier New"'>        </span><span
+  style='font-size:10.0pt;font-family:"Courier New"'>Sandy</span><span
+style='font-size:10.0pt;font-family:"Courier New"'>       | 56</span></p>
+
+<p class=MsoNormal style='border:none;padding:0in'><span style='font-size:10.0pt;
+font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='border:none;padding:0in'><span style='font-size:10.0pt;
+font-family:"Courier New"'>We then submit a query against the database using
+the RunSQL() action, as follows:</span></p>
+
+<p class=MsoNormal style='text-indent:.5in;border:none;padding:0in'><b><span
+style='font-size:10.0pt;font-family:"Courier New"'>RunSQL(“SELECT Name, Age
+FROM People WHERE Age&gt;18 AND Age&lt;50”)</span></b></p>
+
+<p class=MsoNormal style='border:none;padding:0in'><span style='font-size:10.0pt;
+font-family:"Courier New"'>The result data set from this query will be:</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;border:none;
+padding:0in'><span style='font-size:10.0pt;font-family:"Courier New"'>        <b><u>Name       
+| Age</u></b></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;border:none;
+padding:0in'><span style='font-size:10.0pt;font-family:"Courier New"'>        </span><span
+  style='font-size:10.0pt;font-family:"Courier New"'>Alice</span><span
+style='font-size:10.0pt;font-family:"Courier New"'>       | 43</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;border:none;
+padding:0in'><span style='font-size:10.0pt;font-family:"Courier New"'>       
+Bob         | 28</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;border:none;
+padding:0in'><span style='font-size:10.0pt;font-family:"Courier New"'>       
+Cindy       | 21</span></p>
+
+<p class=MsoNormal style='border:none;padding:0in'><span style='font-size:10.0pt;
+font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='border:none;padding:0in'><span style='font-size:10.0pt;
+font-family:"Courier New"'>Following the execution of the query, we would have
+3 rows and 3 columns of data in the result set (note: the column headings are
+not counted in the row count). The current row and column would each be a value
+of 1 upon completion of the query. We could then access this data using the
+following example expressions in our MMF Application:</span></p>
+
+<p class=MsoNormal style='border:none;padding:0in'><u><span style='font-size:
+10.0pt;font-family:"Courier New"'>Expression                    Returns</span></u></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;border:none;
+padding:0in'><b><span style='font-size:10.0pt;font-family:"Courier New"'>Data()</span></b><span
+style='font-size:10.0pt;font-family:"Courier New"'>                        <b>“</b></span><b><span
+  style='font-size:10.0pt;font-family:"Courier New"'>Alice</span></b><b><span
+style='font-size:10.0pt;font-family:"Courier New"'>”</span></b><span
+style='font-size:10.0pt;font-family:"Courier New"'> <i>(value at location 1,1)</i></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;border:none;
+padding:0in'><b><span style='font-size:10.0pt;font-family:"Courier New"'>DataRowCol(2,2)</span></b><span
+style='font-size:10.0pt;font-family:"Courier New"'>               “<b>28”</b> <i>(value
+2,2 – returned as a string)</i></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;border:none;
+padding:0in'><b><span style='font-size:10.0pt;font-family:"Courier New"'>DataRowColByName(3,“Name”)</span></b><span
+style='font-size:10.0pt;font-family:"Courier New"'>    <b>“Cindy”</b> <i>(value
+at location 3,1)</i></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;border:none;
+padding:0in'><b><span style='font-size:10.0pt;font-family:"Courier New"'>ColumnName()</span></b><span
+style='font-size:10.0pt;font-family:"Courier New"'>                  “<b>Name</b>”
+<i>(column name of current column)</i></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;border:none;
+padding:0in'><b><span style='font-size:10.0pt;font-family:"Courier New"'>DataRowCol(0,2</span></b><span
+style='font-size:10.0pt;font-family:"Courier New"'>)               “<b>Age</b>”
+<i>(row 0 represents column names)</i></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;border:none;
+padding:0in'><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;border:none;
+padding:0in'><span style='font-size:10.0pt;font-family:"Courier New"'>This
+exact example is also provided in the MMF sample application.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;border:none;
+padding:0in'><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+</div>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h3>Use of Multiple SQL Database Objects</h3>
+
+<p class=MsoNormal>When multiple SQL Database Objects are used in a single
+frame, or in a single application, all such objects <i>share a common database</i>.
+This means that once a database is opened or closed on any SQL Database Object,
+all other object instances are equally effected. All SQL Database Objects share
+a single database file on the file system and this is handled safely.</p>
+
+<p class=MsoNormal>This implementation decision was made because:</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in'>1)<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>A
+single database can hold an arbitrary number of tables, therefore each database
+represents an open-ended data store. It is easier to open a single database
+once and use it throughout the application, then repeatedly open and close
+databases on each frame.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in'>2)<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>In
+cases where multiple databases are required, it is possible to either use the
+ATTACH command to link them, or just close one database and open another
+explicitly.</p>
+
+<p class=MsoNormal>The practical effect of having one database shared by all
+object instances is that once you open the database the first time, early in
+your application, all later application code can use the database without any
+prior preparation. Any frame can execute SQL commands as required. This saves a
+significant amount of duplicate database opening and closing code thus
+simplifying your application.</p>
+
+<p class=MsoNormal>Although each SQL Database Object shares a common database,
+each object instance retains its own result set. This means each object will
+hold an independent array of results from the previous SQL command that were
+issued through that object. This allows multiple SQL objects to be used to fetch
+and hold separate arrays in memory at the same time.</p>
+
+<p class=MsoNormal>The basic architecture of multiple SQL Database Objects is
+shown in Figure 1.</p>
+
+<p class=MsoNormal align=center style='text-align:center;page-break-after:avoid'><b>Figure
+1 – Architecture of Multiple SQL Database Objects</b></p>
+
+<p class=MsoNormal align=center style='text-align:center'><img border=0
+width=492 height=274 src="image001.jpg"></p>
+
+<h2>Extension Reference</h2>
+
+<p class=MsoNormal>This section provides a full API reference for the SQL
+Database Object v1.1.</p>
+
+<h3>Actions</h3>
+
+<h5 style='margin-left:.5in;page-break-after:avoid'><span style='color:blue'>Open
+File (filename)</span></h5>
+
+<p class=MsoNormal style='margin-left:1.0in'>This action opens a new database.
+If the specified file does not exist, it is created. Note that all instances of
+the SQL Database Object in the application share the same database, so after
+this action is used, all SQL Database Objects will subsequently use this
+database. If a previous database is already open, that database is closed
+before opening the new one. Any active result set is cleared in the object that
+is the subject of the Open File call.</p>
+
+<h5 style='margin-left:.5in;page-break-after:avoid'><span style='color:blue'>Open
+File from Selector (filename or select)</span></h5>
+
+<p class=MsoNormal style='margin-left:1.0in'>This action open a new database
+optionally using the MMF file selection box. Otherwise, this action is
+identical to OpenFile.</p>
+
+<h5 style='margin-left:.5in;page-break-after:avoid'><span style='color:blue'>Close
+File</span></h5>
+
+<p class=MsoNormal style='margin-left:1.0in'>This action closes a currently
+open database. Note that all instances of the SQL Database Object in the
+application share the same database, so after this action is used, all SQL
+Database Objects will no longer have an active database.</p>
+
+<h5 style='margin-left:.5in;page-break-after:avoid'><span style='color:blue'>Run
+SQL (SQLString)</span></h5>
+
+<p class=MsoNormal style='margin-left:1.0in'>This action executes the SQL
+Statement contained in the single string parameter. It is possible to execute
+multiple SQL statements by separating them with a semi-colon (though be aware
+MMF does not like to build large strings and may limit the string length). SQL
+Statements can be used to create, write, read, or update the database, or
+execute standalone expressions. A description of the SQL command language
+available for use with the SQL Database Object can be found <a
+href="SQL%20As%20Understood%20By%20SQLite.htm">here</a>.</p>
+
+<p class=MsoNormal style='margin-left:1.0in'>The output of the SQL statement
+execution is saved in memory in a result set held by the SQL Database Object. These
+results can be accessed using a number of different expressions that start with
+<i>Get Data</i>. The SQL Database Object maintains a current row and current column
+index, which is set to (1,1) following a new query. If there are no results,
+these indexes will be (0,0) and no data or column names can be obtained from
+the result set. Any cell in the result set can be obtained based on the current
+row and column, by specific row or column index, or by using the text column
+name within the result set.</p>
+
+<p class=MsoNormal style='margin-left:1.0in'>If the SQL statement cannot be
+executed for some reason, the error code and error message will be saved and
+can be obtained using the Err and ErrMsg expressions. Also, following an error,
+the DBError condition will return true. This provides a convenient way to
+capture SQL statement errors.</p>
+
+<h5 style='margin-left:.5in;page-break-after:avoid'><span style='color:blue'>Set
+Current Row</span></h5>
+
+<p class=MsoNormal style='margin-left:1.0in'>This action sets the current row
+in the result set. If the requested row index is not available in the current
+result set because the index is out of range, the row index will be set to 1
+instead. A value of 1 represents the first row of the result set, meaning the
+array is 1-based. If there is no result set, the column index will be set to
+zero. </p>
+
+<h5 style='margin-left:.5in;page-break-after:avoid'><span style='color:blue'>Set
+Current Column</span></h5>
+
+<p class=MsoNormal style='margin-left:1.0in'>This action sets the current
+column in the result set. If the requested column index is not available in the
+current result set because the index is out of range, the column index will be
+set to 1. A value of 1 represents the first column of the current row in the
+result set, meaning the array is 1-based. If there is no result set, the column
+index will be set to zero.</p>
+
+<h5 style='margin-left:.5in;page-break-after:avoid'><span style='color:blue'>Clear
+Last Error</span></h5>
+
+<p class=MsoNormal style='margin-left:1.0in'>This action clears a previous
+error. An error is set by a failed SQL statement execution. If there is no
+error, this function performs no function.         </p>
+
+<h3>Conditions</h3>
+
+<h5 style='margin-left:.5in;page-break-after:avoid'><span style='color:blue'>OnSQLError</span></h5>
+
+<p class=MsoNormal style='margin-left:1.0in'>This condition is set to true when
+the previous RunSQL statement failed. This is typically due to invalid syntax
+in the SQL string or if a database has not been opened. By trapping this true
+condition (and displaying the ErrMsg value in a dialog box) you can capture
+failed SQL statement executions effectively.</p>
+
+<h5 style='margin-left:.5in;page-break-after:avoid'><span style='color:blue'>DBOpen</span></h5>
+
+<p class=MsoNormal style='margin-left:1.0in'>This condition is set to true when
+this object has an open database to operate on. If this condition is true for
+one SQL Database Object, it should be true for all objects because all
+instances in the same application share a common database.</p>
+
+<h3>Expressions</h3>
+
+<h5 style='page-break-after:avoid'><span style='color:blue'>Get Num Rows</span></h5>
+
+<p class=MsoNormal style='margin-left:.5in'>This expression returns the current
+number of rows in the result set. If there is no result set, a value of 0 is
+returned.            </p>
+
+<h5><span style='color:blue'>Get Num Cols</span></h5>
+
+<p class=MsoNormal style='margin-left:.5in'>This expression returns the current
+number of columns in the result set. If there is no result set, a value of 0 is
+returned.           </p>
+
+<h5 style='page-break-after:avoid'><span style='color:blue'>Get Current Row
+Index</span></h5>
+
+<p class=MsoNormal style='margin-left:.5in'>This expression returns the row
+index in the result set. If there is no result set, a value of 0 is returned.     </p>
+
+<h5><span style='color:blue'>Get Current </span><span style='color:blue'>Col</span><span
+style='color:blue'> Index</span></h5>
+
+<p class=MsoNormal style='margin-left:.5in'>This expression returns the current
+column index in the result set. If there is no result set, a value of 0 is
+returned.            </p>
+
+<h5 style='page-break-after:avoid'><span style='color:blue'>Get Data</span></h5>
+
+<p class=MsoNormal style='margin-left:.5in'>This expression returns the element
+of the result set at location indicated by the current row and column. The
+result data is always returned as a string. If the object does not currently
+have a result set available, the value of &quot;SQLDB: No Data Present&quot;
+will be returned. If the requested location in the result set is NULL, then
+this function will return no data (note, it will not return an empty string in
+this case. An empty string is only returned if the requested location in the
+result set actually contains an empty string).  </p>
+
+<h5 style='page-break-after:avoid'><span style='color:blue'>Get Data from Row, </span><span
+  style='color:blue'>Col</span><span style='color:blue'> (RowIndex,ColIndex)</span></h5>
+
+<p class=MsoNormal style='margin-left:.5in'>This expression returns the data
+element of the result set at the specified row and column index.  These indexes
+have a base of 1. Use of this function will not change the current row and
+current column indexes being held by the object. If one or more of the indexes
+exceed the valid index range, the highest available row or column will be
+returned instead. If the object does not currently have a result set available,
+the value of &quot;SQLDB: No Data Present&quot; will be returned. If a row
+index of zero is used, this function will return column name information.</p>
+
+<h5 style='page-break-after:avoid'><span style='color:blue'>Get ColumnName</span></h5>
+
+<p class=MsoNormal style='margin-left:.5in'>This expression returns the column
+name of the current column. If the current column index is not valid (if it is
+zero or out of range of the current result set for some reason), no value will
+be returned. The column name comes from the column in the table that sourced
+the column in the result set. This column name can be overridden in the SQL
+statement to provide user-friendly column names.</p>
+
+<h5 style='page-break-after:avoid'><span style='color:blue'>Get Data from </span><span
+  style='color:blue'>Col</span><span style='color:blue'> Name (ColName)</span></h5>
+
+<p class=MsoNormal style='margin-left:.5in'>This expression returns the data
+element of the result set at the current row index and specified column name.
+The appropriate column index will be looked up using the supplied column name,
+and result data at that location returned. This function is otherwise identical
+to DataRowCol. </p>
+
+<h5 style='page-break-after:avoid'><span style='color:blue'>Get Data from Row, </span><span
+  style='color:blue'>Col</span><span style='color:blue'> Name (RowIndex,ColName)</span></h5>
+
+<p class=MsoNormal style='margin-left:.5in'>This expression returns the data
+element of the result set at the specified row index and specified column name.
+The appropriate column index will be looked up using the supplied column name,
+the result data at that location returned. This function is otherwise identical
+to DataRowCol. </p>
+
+<h5 style='page-break-after:avoid'><span style='color:blue'>Quote (inString)</span></h5>
+
+<p class=MsoNormal style='margin-left:.5in'>This function is a special
+processing function used to build SQL statements for later submission to the
+SQL Database Object. When a string contains a single quote character, this
+needs to be specially processed (“escaped”) prior to submission in an SQL
+statement. This expression will return a properly processed string that can be
+later submitted within an SQL statement. For example, if the string “Can’t” is
+to be submitted within an SQL statement, this string should be processed
+through this function first. The result of submitting the string “Can’t” to
+this function would be “Can’’t”. Note that the single quote has been repeated a
+second time, which is the required escape sequence.</p>
+
+<h5 style='page-break-after:avoid'><span style='color:blue'>Err</span></h5>
+
+<p class=MsoNormal style='margin-left:.5in'>This function returns the value of
+the previous database engine error, typically as a result of a failed SQL
+statement execution or when a database has not been opened. The value of Err
+and ErrMsg are cleared using the ClearErr action.</p>
+
+<h5 style='page-break-after:avoid'><span style='color:blue'>ErrMsg</span></h5>
+
+<p class=MsoNormal style='margin-left:.5in'>This function returns the text
+string of the previous database engine error, typically as a result of a failed
+SQL statement execution or when a database has not been opened. The value of
+Err and ErrMsg are cleared using the ClearErr action.</p>
+
+<b><i><span style='font-size:14.0pt;font-family:Arial'><br clear=all
+style='page-break-before:always'>
+</span></i></b>
+
+<h2>Using the SQL Database Object Effectively in MMF</h2>
+
+<p class=MsoNormal>This section contains some usage info and guidelines for
+using the SQL Database Object in your MMF applications:</p>
+
+<h3>Escaping of single quotes in SQL statements</h3>
+
+<p class=MsoNormal>Single quotes which are intended to be stored in the
+database must be escaped. The escape sequence consists of a two single quotes
+in a row. Use the SQL Database Object Quote() function to convert a string that
+has single quotes (such as containing the word “can’t” to a properly escaped
+string prior to use in an SQL statement.</p>
+
+<p class=MsoNormal>Single quotes should <i>not</i> be escaped when they form
+the bounds of a single string value in an SQL statement. This is done very
+frequently in SQL. Here are some examples:</p>
+
+<div style='border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;border:none;
+padding:0in'><span style='font-size:10.0pt;font-family:"Courier New"'>Single
+quotes should not be escaped in this statement, and the single quote serves as
+a boundary marker for the Name field value:</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;border:none;
+padding:0in'><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-indent:
+.5in;border:none;padding:0in'><b><span style='font-size:10.0pt;font-family:
+"Courier New"'>“SELECT Name, Age FROM People WHERE Name='Joe Smith' AND
+Age&lt;40”</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;border:none;
+padding:0in'><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;border:none;
+padding:0in'><span style='font-size:10.0pt;font-family:"Courier New"'>Single
+quotes must be escaped in name “O'Henry” in this statement, as the intent is to
+actually insert a single quote into the database as a character as part of the
+name. However, the quotes around the name should not be escaped:</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;border:none;
+padding:0in'><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-indent:
+.5in;border:none;padding:0in'><b><span style='font-size:10.0pt;font-family:
+"Courier New"'>“INSERT INTO People (Name, Age) VALUES ('Brian O''Henry', 27)”</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;border:none;
+padding:0in'><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;border:none;
+padding:0in'><span style='font-size:10.0pt;font-family:"Courier New"'>You must
+always be careful to use single quotes around your string values when you use
+them with the SQL Database Object. When storing or using user-entered strings,
+the Quote() function of the SQL Database Object can be used to accomplish
+proper escaping as in this example code:</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;border:none;
+padding:0in'><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-indent:
+.5in;border:none;padding:0in'><b><span style='font-size:10.0pt;font-family:
+"Courier New"'>SQLDB.RunSQL(“INSERT INTO People (Name, Age) VALUES ('” +<br>
+      SQLDB.Quote(UserName)+ “', 21)”</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;border:none;
+padding:0in'><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;border:none;
+padding:0in'><span style='font-size:10.0pt;font-family:"Courier New"'>Note how
+the single quotes appear before and after the insertion of the UserName string
+variable, and the UserName string variable is processed using the Quote()
+function prior to use in the SQL statement. This example will properly handle
+the case where user includes single quotes in their name. Think of this with
+names, game names (“Jim’s Game”) and other cases where the user data may
+properly contain single quotes.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;border:none;
+padding:0in'><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+</div>
+
+<h3>Using result sets</h3>
+
+<p class=MsoNormal>Every subsequent SQL statement you execute through an object
+will change the current result set of the object, even if the new statement
+does not return any results. Therefore if you use an instance of the SQL
+Database Object to store the results of a query during your frame, do not
+submit any further SQL statements to that SQL Database Object instance until
+you are done with the data.</p>
+
+<h3>Invalid Conditions</h3>
+
+<p class=MsoNormal>If the SQL statement provided to RunSQL is bad, such as do
+to a syntax error, the condition DBError is set. You can trap this and fire a
+dialog box or similar. You can obtain an error code and error message by using
+the Err and ErrMsg expressions, and you will need to call ClearErr to reset the
+object. </p>
+
+<p class=MsoNormal>Certain ‘non-serious’ issues like requesting a column but
+providing an invalid column name, requesting data when none is present, or
+executing a function when no database is open will return special output
+strings. These strings have the form “SQLDB: message” and will be returned as
+the expression output string. </p>
+
+<p class=MsoNormal>If you call any functions and provide row or column indexes
+that are outside the valid range, the component will restrict indexes to the
+valid range and return the closest result.</p>
+
+<h3>Large SQL Statements</h3>
+
+<p class=MsoNormal><a name=q10>When you need to construct a large SQL
+statement, you must build it in parts. The MMF expression editor limits the
+size of the strings you can build in a single expression. This can be
+accomplished by using statements such as the following:</a></p>
+
+<div style='border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 0in 4.0pt'>
+
+<p class=MsoNormal style='text-indent:.5in;border:none;padding:0in'><b><span
+style='font-size:10.0pt;font-family:"Courier New"'>SQL = “SELECT Name, Age, Town,
+Occupation FROM CitizensTable”</span></b></p>
+
+<p class=MsoNormal style='text-indent:.5in;border:none;padding:0in'><b><span
+style='font-size:10.0pt;font-family:"Courier New"'>SQL = SQL + “ </span></b><b><span
+  style='font-size:10.0pt;font-family:"Courier New"'>WHERE</span></b><b><span
+ style='font-size:10.0pt;font-family:"Courier New"'> </span></b><b><span
+  style='font-size:10.0pt;font-family:"Courier New"'>State</span></b><b><span
+style='font-size:10.0pt;font-family:"Courier New"'>='” + StateString + “'”</span></b></p>
+
+<p class=MsoNormal style='text-indent:.5in;border:none;padding:0in'><b><span
+style='font-size:10.0pt;font-family:"Courier New"'>SQL = SQL + “ AND Country='”
++ CountryString + “'”</span></b></p>
+
+<p class=MsoNormal style='text-indent:.5in;border:none;padding:0in'><b><span
+style='font-size:10.0pt;font-family:"Courier New"'>SQL = SQL + “ AND Age&gt;=”
++ MinAgeValue</span></b></p>
+
+<p class=MsoNormal style='border:none;padding:0in'><span style='font-size:10.0pt;
+font-family:"Courier New"'>Note how the single quotes are used before and after
+each string, but not before after the number MinAgeValue. Also note how a space
+is inserted at the beginning of each successive line. If this is forgotten, a
+syntax error will usually result. As pointed out earlier, it would be safer to
+use the Quote() function to pre-process the StateString and CountryString in
+the above example.</span></p>
+
+</div>
+
+<h3>Loading External Data Sets</h3>
+
+<p class=MsoNormal>The SQL COPY command can be used to load data from external
+text files with delimiters such as commas or tabs. This function is documented
+in the SQL language page <a href="SQL%20As%20Understood%20By%20SQLite.htm">here</a>.
+The number of columns in each row of the input file must exactly match the
+number of columns in the destination table. Data is appended to the destination
+table. Note that the default delimiter is a tab, so change it to a comma if you
+use comma separated value (CSV) files.</p>
+
+<h3>Database Size and Performance</h3>
+
+<p class=MsoNormal>The internal database engine, SQLite (version 2.8.15),
+limits the amount of data in one row to 1 megabyte. The database itself has no
+practical size limit (according to the SQLite documentation, maximum database
+size is in the terabyte region - though I think Windows would stop you long
+before then…). </p>
+
+<p class=MsoNormal>If you need to load a large amount of data, try to use
+external files whenever possible and use the COPY command. Making many inserts
+in quick succession will be slow.</p>
+
+<p class=MsoNormal>Unless already in a transaction, each SQL statement has a
+new transaction started for it. This is very expensive, since it requires
+reopening, writing to, and closing the journal file for each statement. This
+can be avoided by wrapping sequences of SQL statements with <code><span
+style='font-size:10.0pt'>BEGIN TRANSACTION;</span></code> and <code><span
+style='font-size:10.0pt'>END TRANSACTION;</span></code> statements. This
+speedup is also obtained for statements which don't alter the database.</p>
+
+<b><i><span style='font-size:14.0pt;font-family:Arial'><br clear=all
+style='page-break-before:always'>
+</span></i></b>
+
+<h2>Working with SQLite Databases</h2>
+
+<p class=MsoNormal>A detailed description of the SQL commands and query
+language supported by the SQL Database Object’s internal SQLite database engine
+can be found <a href="SQL%20As%20Understood%20By%20SQLite.htm">here</a>. A good
+understanding of this information will help you to write fast, reliable, and
+effective applications with the SQL Database Object.</p>
+
+<p class=MsoNormal>You may also want to use certain 3<sup>rd</sup> party tools
+to define, test, introspect, or develop underlying databases that will be
+queried through the SQL Database Object. The following set of useful links
+represent information or tools that may aid your database design and
+development efforts.</p>
+
+<p class=MsoNormal>Note that these 3<sup>rd</sup> party tools can create and
+modify existing databases, therefore it is in theory possible that an advanced
+user could obtain one of these tools, and use it to modify data that supports
+your application. The SQL Database Object v1.1 does not include encryption.</p>
+
+<h3>Useful links:</h3>
+
+<h5 style='margin-left:.5in'>SQL Course</h5>
+
+<p class=MsoNormal style='margin-left:.5in'>This link leads to a short course
+that is helpful to learn SQL basics</p>
+
+<p class=MsoNormal style='margin-left:.5in'><a href="http://www.sqlcourse.com/">http://www.sqlcourse.com/</a></p>
+
+<h5 style='margin-left:.5in'>SQLite Control Center</h5>
+
+<p class=MsoNormal style='margin-left:.5in'>This link leads to a free GUI
+application that lets you operate on SQLite databases. You can test your SQL
+code or configure a database before using it with the SQL Database Object.</p>
+
+<p class=MsoNormal style='margin-left:.5in'><a
+href="http://bobmanc.home.comcast.net/sqlitecc.html">http://bobmanc.home.comcast.net/sqlitecc.html</a></p>
+
+<h5 style='margin-left:.5in'>DB Designer</h5>
+
+<p class=MsoNormal style='margin-left:.5in'>A free tool that allows you to
+define relational databases in a visual tool, and export the scripts required
+to create them. These scripts can be loaded into your MMF application and
+executed, or you can pre-create the core database outside of MMF. This is a
+very helpful tool, just be aware that DB Designer allows some features not
+supported by the internal SQLite database engine used by the SQL Database
+Object.</p>
+
+<p class=MsoNormal style='margin-left:.5in'><a
+href="http://www.fabforce.net/dbdesigner4/">http://www.fabforce.net/dbdesigner4/</a></p>
+
+<h5 style='margin-left:.5in'>SQLite Tools</h5>
+
+<p class=MsoNormal style='margin-left:.5in'>A useful command line tool for
+accessing and modifying SQLite databases. Very helpful for executing scripts
+previously output from DBDesigner.</p>
+
+<p class=MsoNormal style='margin-left:.5in'><a
+href="http://www.sqlite.org/sqlite-2_8_16.zip">http://www.sqlite.org/sqlite-2_8_16.zip</a></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>
